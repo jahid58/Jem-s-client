@@ -1,0 +1,46 @@
+.topbar {
+  @apply bg-teal-900 bg-transparent font-serif flex justify-around h-20  p-2 text-white;
+}
+.left_top {
+  @apply flex items-center;
+}
+.menu_icon {
+  @apply block md:hidden mx-2 cursor-pointer   fill-current text-white;
+}
+.logo {
+  @apply font-semibold text-3xl font-serif my-auto text-yellow-400;
+}
+.searchOption {
+  @apply hidden w-2/3  sm:flex items-center;
+}
+.dropdown {
+  @apply w-24 bg-white h-10 z-50 ml-4 rounded-l-md border-r-2 relative;
+}
+.dropdown_btn {
+  @apply flex items-center p-2 text-gray-400  rounded-md;
+}
+.dropdown_content {
+  @apply absolute  py-2 bg-white  rounded-md shadow-xl w-44;
+}
+.dropdown_link {
+  @apply block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white;
+}
+.searchInput {
+  @apply group h-10 w-full;
+}
+.searchIcon {
+  @apply bg-orange-400 fill-current h-10 text-black mr-4 px-4 py-2 rounded-r-md;
+}
+.right_top {
+  @apply flex justify-items-end;
+}
+.account {
+  @apply px-2 cursor-pointer hover:underline my-auto text-center;
+}
+
+.wishlist {
+  @apply p-4 cursor-pointer hover:bg-teal-700 my-auto rounded-2xl;
+}
+.cart {
+  @apply p-4 cursor-pointer hover:bg-teal-700 my-auto rounded-2xl;
+}

@@ -1,0 +1,19 @@
+.megabar {
+  @apply bg-teal-900 h-12 flex justify-start items-start p-2;
+}
+.menu {
+  @apply relative z-50;
+}
+.dropdown {
+  @apply bg-blue-300   grid grid-cols-3 w-max   absolute;
+}
+.dropdown_item {
+  @apply p-4 m-6;
+}
+.dropdown_item h6 {
+  @apply font-semibold bg-purple-400 p-4 rounded-md;
+}
+
+.dropdown img {
+  @apply h-44 w-52;
+}

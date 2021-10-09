@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import colors from "tailwindcss/colors";
+import {
+  AccountCircle,
+  FavoriteBorder,
+  MenuOutlined,
+  Search,
+  ShoppingCart,
+} from "@mui/icons-material";
+import styles from "./Topbar.module.css";
+import CartDropdown from "./../cartDropdown/CartDropdown";
+
+const category = [{ name: "mens" }, { name: "woman" }, { name: "kids" }];
+const Topbar = () => {
+  const [searchDropdown, setSearchDropdown] = useState(false);
+  const [cartDropdown, setCartDropdown] = useState(false);
+  return (
+    <div class={styles.topbar}>
+      <div class={styles.left_top}>
+        <div class={styles.menu_icon}>
+          <MenuOutlined fontSize="large"></MenuOutlined>
+        </div>
+        <p class={styles.logo}> Jem's </p>
+      </div>
+
+      <div class={styles.searchOption}>
+        <div
+          class={styles.dropdown}
+          onMouseEnter={() => setSearchDropdown(true)}
+          onMouseLeave={() => setSearchDropdown(false)}
+        >
+          <button class={styles.dropdown_btn}> Category</button>
+          {searchDropdown && (
+            <div class={styles.dropdown_content}>
+              {category.map((dp) => (
+                <Link class={styles.dropdown_link}> {dp.name} </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <input class={styles.searchInput} type="text" />
+
+        <div class={styles.searchIcon}>
+          {" "}
+          <Search> </Search>
+        </div>
+      </div>
+      <div class={styles.right_top}>
+        {" "}
+        <div className={styles.account}>
+          <AccountCircle fontSize="large"></AccountCircle> <br />
+          <small className="hidden lg:block">My Account</small>
+        </div>
+        <div className={styles.wishlist}>
+          <FavoriteBorder fontSize="large"></FavoriteBorder>{" "}
+        </div>
+        <div
+          className={styles.cart}
+          onMouseEnter={() => setCartDropdown(true)}
+          onMouseLeave={() => setCartDropdown(false)}
+        >
+          {" "}
+          <ShoppingCart fontSize="large"></ShoppingCart>
+          {cartDropdown && <CartDropdown></CartDropdown>}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Topbar;
