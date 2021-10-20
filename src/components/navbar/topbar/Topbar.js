@@ -10,6 +10,7 @@ import {
 } from "@mui/icons-material";
 import styles from "./Topbar.module.css";
 import CartDropdown from "./../cartDropdown/CartDropdown";
+import UserMenu from "./../../admin/adminDashboard/header/UserMenu";
 
 const category = [{ name: "mens" }, { name: "woman" }, { name: "kids" }];
 const Topbar = () => {
@@ -49,12 +50,8 @@ const Topbar = () => {
       </div>
       <div class={styles.right_top}>
         {" "}
-        <div className={styles.account}>
-          <AccountCircle fontSize="large"></AccountCircle> <br />
-          <small className="hidden lg:block">My Account</small>
-        </div>
         <div className={styles.wishlist}>
-          <FavoriteBorder fontSize="large"></FavoriteBorder>{" "}
+          <FavoriteBorder></FavoriteBorder>{" "}
         </div>
         <div
           className={styles.cart}
@@ -62,8 +59,11 @@ const Topbar = () => {
           onMouseLeave={() => setCartDropdown(false)}
         >
           {" "}
-          <ShoppingCart fontSize="large"></ShoppingCart>
+          <ShoppingCart></ShoppingCart>
           {cartDropdown && <CartDropdown></CartDropdown>}
+        </div>
+        <div className={styles.account}>
+          <UserMenu />
         </div>
       </div>
     </div>

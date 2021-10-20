@@ -1,12 +1,22 @@
 import React from "react";
 import Navbar from "../components/navbar/navbar/Navbar";
-import AdminPage from "./AdminPage";
+import Footer from "../components/Footer/Footer";
+import Products from "./../components/product/products/Products";
+import PolicySection from "../components/policySection/PolicySection";
+import MyCarousel from "../components/carousel/MyCarousel";
+import Sliders from "../components/carousel/Slider";
+import HomeSidebar from "./../components/homeSidebar/HomeSidebar";
 
 const Homepage = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <AdminPage></AdminPage>
+      {/* <Sliders /> */}
+      {/* <MyCarousel /> */}
+      <Products />
+      <HomeSidebar />
+      <PolicySection />
+      <Footer></Footer>
     </div>
   );
 };

@@ -10,6 +10,10 @@ module.exports = {
         current: "currentColor",
         myTheme: " #115E59",
         gray: colors.blueGray,
+        white: colors.white,
+        pink: colors.pink,
+        beige: colors.beige,
+        black: colors.black,
         teal: colors.teal,
         orange: colors.orange,
       },
@@ -27,3 +31,12 @@ module.exports = {
   },
   plugins: [],
 };
+// const tailwindMobileConfig = require('tailwind-mobile/config');
+
+// // wrap your config with tailwindMobileConfig
+// module.exports = tailwindMobileConfig({
+//   // JIT mode should be enabled
+//   mode: 'jit',
+//   // rest of your usual Tailwind CSS config here
+//   ...
+// });

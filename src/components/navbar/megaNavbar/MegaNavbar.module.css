@@ -1,5 +1,8 @@
 .megabar {
-  @apply bg-teal-900 h-12 flex justify-start items-start p-2;
+  @apply bg-teal-900 h-12 flex justify-between items-start p-2;
+}
+.megabar_menu {
+  @apply flex justify-start items-start p-2;
 }
 .menu {
   @apply relative z-50;

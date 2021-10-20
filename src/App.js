@@ -1,17 +1,22 @@
 import React from "react";
 
-import { Counter } from "./features/counter/Counter";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
-import ManageProduct from "./components/admin/manageProduct/ManageProduct";
-import AddProduct from "./components/admin/addProduct/AddProduct";
-import Sidebar from "./components/admin/adminSidebar/Sidebar";
+import ManageProduct from "./components/admin/products/manageProduct/ManageProduct";
+import AddProduct from "./components/admin/products/addProduct/AddProduct";
+
+import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
+import LoginPage from "./pages/LoginPage";
+import Topbar from "./components/navbar/topbar/Topbar";
 
 function App() {
   return (
     <div>
       <Router>
+        <Route path="/">
+          <Topbar></Topbar>
+        </Route>
         <Switch>
           <Route path="/home">
             <Homepage></Homepage>
@@ -19,11 +24,20 @@ function App() {
           <Route path="/manageProduct">
             <ManageProduct></ManageProduct>
           </Route>
+          <Route path="/addProduct">
+            <AddProduct></AddProduct>
+          </Route>
           <Route path="/admin">
-            <Sidebar></Sidebar>
+            <Dashboard></Dashboard>
+          </Route>
+          {/* <Route path="/">
+            <Homepage />
+          </Route> */}
+          <Route path="/login">
+            <LoginPage />
           </Route>
           <Route path="/">
-            <Sidebar></Sidebar>
+            <Homepage></Homepage>
           </Route>
         </Switch>
       </Router>

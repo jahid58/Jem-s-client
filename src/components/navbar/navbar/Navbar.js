@@ -5,7 +5,6 @@ import Topbar from "./../topbar/Topbar";
 const Navbar = () => {
   return (
     <div>
-      <Topbar></Topbar>
       <MegaNavbar></MegaNavbar>
     </div>
   );
