@@ -1,5 +1,5 @@
 .megabar {
-  @apply bg-teal-900 h-12 flex justify-between items-start p-2;
+  @apply bg-myTheme font-sans h-12 flex justify-between items-start p-2;
 }
 .megabar_menu {
   @apply flex justify-start items-start p-2;
@@ -8,15 +8,17 @@
   @apply relative z-50;
 }
 .dropdown {
-  @apply bg-blue-300   grid grid-cols-3 w-max   absolute;
+  @apply bg-gray-50   grid grid-cols-3 w-max   absolute;
 }
 .dropdown_item {
   @apply p-4 m-6;
 }
 .dropdown_item h6 {
-  @apply font-semibold bg-purple-400 p-4 rounded-md;
+  @apply font-semibold text-myTheme p-4 rounded-md;
 }
-
+.dropdown_item_data {
+  @apply m-2   hover:text-myTheme;
+}
 .dropdown img {
   @apply h-44 w-52;
 }

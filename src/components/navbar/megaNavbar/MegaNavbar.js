@@ -64,7 +64,7 @@ const MegaNavbar = () => {
                           <div class=" p-2">
                             {item.items &&
                               item.items.map((it) => (
-                                <div class="m-2 hover:underline">
+                                <div class={styles.dropdown_item_data}>
                                   <Link to={it}>{it}</Link>
                                 </div>
                               ))}
@@ -94,7 +94,7 @@ const MegaNavbar = () => {
                           <div class=" p-2">
                             {item.items &&
                               item.items.map((it) => (
-                                <div class="m-2 hover:underline">
+                                <div class={styles.dropdown_item_data}>
                                   <Link to={it}>{it}</Link>
                                 </div>
                               ))}

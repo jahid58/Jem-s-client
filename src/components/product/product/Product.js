@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import Arrow from "./Arrow";
+import React from "react";
 
 function Product({ product, itemId }) {
-  const visibility = React.useContext(VisibilityContext);
-
   return (
     <div class=" m-4 h-78 min-w-max   flex  items-center justify-center bg-transparent">
       <div class=" bg-gray-900 shadow-lg rounded-xl p-4">

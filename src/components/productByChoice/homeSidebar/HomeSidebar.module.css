@@ -2,11 +2,11 @@
   @apply m-4  max-w-min;
 }
 .sidebar_criteria {
-  @apply m-4  p-4;
+  @apply m-2  p-2;
 }
 .sidebar_criteria_title {
   @apply border-b-2  border-gray-400;
 }
 .sidebar_criteria_items {
-  @apply my-2  cursor-pointer hover:text-teal-900;
+  @apply cursor-pointer hover:text-teal-900;
 }

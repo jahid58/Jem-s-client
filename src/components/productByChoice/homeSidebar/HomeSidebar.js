@@ -1,27 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { items } from "./sidebarItem";
 import styles from "./HomeSidebar.module.css";
 import { Link } from "react-router-dom";
-import {
-  BlockTitle,
-  BlockHeader,
-  List,
-  ListItem,
-  Range,
-} from "tailwind-mobile/react";
+import { BlockTitle, List, ListItem, Range } from "tailwind-mobile/react";
+import { useHistory } from "react-router";
 const HomeSidebar = () => {
   const [price, setPrice] = useState(150);
-
+  const history = useHistory();
+  const handleClick = (data) => {
+    if (history.location.pathname !== `/${data}`) {
+      history.push(`/${data}`);
+    } else {
+      history.push("/");
+    }
+  };
+  useEffect(() => {
+    history.push(`/${price}`);
+  }, [price]);
   return (
     <div className={styles.sidebar_container}>
       {items.map((item) => (
         <div className={styles.sidebar_criteria}>
           {item.title === "COLLECTIONS" && (
             <div>
-              {" "}
               <p className={styles.sidebar_criteria_title}>{item.title}</p>
               {item.collection.map((data) => (
-                <p className={styles.sidebar_criteria_items}>{data}</p>
+                <div
+                  className="flex my-2 items-center "
+                  onClick={() => handleClick(data)}
+                >
+                  <input
+                    type="checkbox"
+                    class="mr-2 checked:bg-blue-600 checked:border-transparent "
+                  ></input>
+
+                  <p className={styles.sidebar_criteria_items}>{data}</p>
+                </div>
               ))}
             </div>
           )}
@@ -29,7 +43,17 @@ const HomeSidebar = () => {
             <div>
               <p className={styles.sidebar_criteria_title}>{item.title}</p>
               {item.collection.map((data) => (
-                <p className={styles.sidebar_criteria_items}>{data}</p>
+                <div
+                  className="flex my-2 items-center "
+                  onClick={() => handleClick(data)}
+                >
+                  <input
+                    type="checkbox"
+                    class="mr-2 checked:bg-blue-600 checked:border-transparent "
+                  ></input>
+
+                  <p className={styles.sidebar_criteria_items}>{data}</p>
+                </div>
               ))}
             </div>
           )}
@@ -41,7 +65,6 @@ const HomeSidebar = () => {
               <ul class="flex flex-row justify-center items-center my-4 space-x-2">
                 {item.collection.map((color) => (
                   <Link to={color}>
-                    {" "}
                     <li
                       class={`bg-${color}-600 h-8 w-8 rounded-2xl cursor-pointer`}
                     ></li>
@@ -55,7 +78,17 @@ const HomeSidebar = () => {
             <div>
               <p className={styles.sidebar_criteria_title}>{item.title}</p>
               {item.collection.map((data) => (
-                <p className={styles.sidebar_criteria_items}>{data}</p>
+                <div
+                  className="flex my-2 items-center "
+                  onClick={() => handleClick(data)}
+                >
+                  <input
+                    type="checkbox"
+                    class="mr-2 checked:bg-blue-600 checked:border-transparent "
+                  ></input>
+
+                  <p className={styles.sidebar_criteria_items}>{data}</p>
+                </div>
               ))}
             </div>
           )}

@@ -12,7 +12,7 @@ import Topbar from "./components/navbar/topbar/Topbar";
 
 function App() {
   return (
-    <div>
+    <div className="font-sans">
       <Router>
         <Route path="/">
           <Topbar></Topbar>

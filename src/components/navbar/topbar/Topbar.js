@@ -31,7 +31,7 @@ const Topbar = () => {
           onMouseEnter={() => setSearchDropdown(true)}
           onMouseLeave={() => setSearchDropdown(false)}
         >
-          <button class={styles.dropdown_btn}> Category</button>
+          <button class={styles.dropdown_btn}> All categories</button>
           {searchDropdown && (
             <div class={styles.dropdown_content}>
               {category.map((dp) => (
@@ -41,7 +41,11 @@ const Topbar = () => {
           )}
         </div>
 
-        <input class={styles.searchInput} type="text" />
+        <input
+          class={styles.searchInput}
+          type="text"
+          placeholder="what you are looking for"
+        />
 
         <div class={styles.searchIcon}>
           {" "}

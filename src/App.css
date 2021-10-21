@@ -25,7 +25,9 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
-
+.product_double_row {
+  height: 800px;
+}
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);

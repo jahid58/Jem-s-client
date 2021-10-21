@@ -5,7 +5,8 @@ import Products from "./../components/product/products/Products";
 import PolicySection from "../components/policySection/PolicySection";
 import MyCarousel from "../components/carousel/MyCarousel";
 import Sliders from "../components/carousel/Slider";
-import HomeSidebar from "./../components/homeSidebar/HomeSidebar";
+import HomeSidebar from "../components/productByChoice/homeSidebar/HomeSidebar";
+import ProductByChoice from "../components/productByChoice/ProductByChoice";
 
 const Homepage = () => {
   return (
@@ -14,7 +15,7 @@ const Homepage = () => {
       {/* <Sliders /> */}
       {/* <MyCarousel /> */}
       <Products />
-      <HomeSidebar />
+      <ProductByChoice />
       <PolicySection />
       <Footer></Footer>
     </div>

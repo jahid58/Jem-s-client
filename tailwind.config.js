@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        myTheme: " #115E59",
+        myTheme: " #274B4F",
         gray: colors.blueGray,
         white: colors.white,
         pink: colors.pink,
@@ -17,17 +17,23 @@ module.exports = {
         teal: colors.teal,
         orange: colors.orange,
       },
+
       fontFamily: {
-        sans: ["ui-sans-serif", "system-ui"],
-        serif: ["ui-serif", "Georgia"],
-        mono: ["ui-monospace", "SFMono-Regular"],
-        display: ["Oswald"],
-        body: ['"Open Sans"'],
+        sans: ["Roboto", "Helvetica", "Arial", "sans-serif"],
+
+        serif: ["Merriweather", "serif"],
+
+        mont: ["Montserrat", "sans-serif"],
+        sch: ["Scheherazade New", "serif"],
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      extend: {
+        textColor: ["visited"],
+      },
+    },
   },
   plugins: [],
 };
