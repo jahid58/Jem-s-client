@@ -7,8 +7,40 @@ const AddProduct = () => {
   const [imageURL, setImageURL] = useState(null);
   const [imageURLStatus, setImageURLStatus] = useState();
   const [dbStatus, setDbStatus] = useState(false);
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [sizes, setSizes] = useState([]);
+  const [colors, setColors] = useState([]);
+  const allColors = [
+    "green",
+    "khaki",
+    "red",
+    "blue",
+    "gray",
+    "light gray",
+    "dark gray",
+    "crimson",
+    "yellow",
+    "yellow green",
+    "MediumVioletRed",
 
+    "gainsboro",
+    "chocolate",
+    "aqua",
+    "darkblue",
+    "midnight blue",
+    "dark red",
+    "tan",
+  ];
+  const allSize = ["M", "L", "XL", "XXL", "XXXL"];
+  const reviews = [
+    { reviewer: "suck", comment: "fuck", rating: 4 },
+    { reviewer: "suck", comment: "suck", rating: 4 },
+  ];
+  const discount = {
+    discountMessage: "fuck",
+    discountAmount: 4,
+    discountPercentage: 4,
+  };
   const handleSubmit = (e) => {
     const requestBody = {
       query: `mutation {
@@ -16,24 +48,28 @@ const AddProduct = () => {
           title:"${e.target.title.value}",
         name:"${e.target.name.value}",
         description:"${e.target.description.value}",
-        size:"${e.target.size.value}",
+        size:"${sizes}",
         rating:${e.target.rating.value},
         category:"${e.target.category.value}",
-        color:" ${e.target.color.value}",
-        department:" ${e.target.department.value}",
+        color:"${colors}",
+        gender:" ${e.target.department.value}",
         price: ${e.target.price.value},
         brand:" ${e.target.brand.value}",
         img: "${imageURL}",
         date:"${e.target.date.value}",
+        discount:${discount},
+        reviews:${reviews},
+        material:"jachhetai",
       }) {
-          date 
-          _id
+          size 
+         color
         }
       }
       `,
     };
+
     // https://jems-server1.herokuapp.com/
-    const url = `https://jems-server1.herokuapp.com/graphql`;
+    const url = ` https://jems-server1.herokuapp.com/graphql`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -53,7 +89,20 @@ const AddProduct = () => {
 
     e.preventDefault();
   };
+  const handleSize = (e) => {
+    const isHave = sizes.indexOf(e.target.value);
 
+    if (isHave === -1) {
+      setSizes([...sizes, e.target.value]);
+    }
+  };
+  const handleColor = (e) => {
+    const isHave = colors.indexOf(e.target.value);
+    console.log(colors, sizes);
+    if (isHave === -1) {
+      setColors([...colors, e.target.value]);
+    }
+  };
   const handleImageUpload = (event) => {
     const imageData = new FormData();
     imageData.set("key", "ca6c9c7b95b538d35b5137a6b8deb060");
@@ -207,41 +256,6 @@ const AddProduct = () => {
                           </datalist>
                         </div>
                         <div class="mb-6">
-                          <label class={styles.form_input_labels} for="size">
-                            Size
-                          </label>
-                          <select
-                            class={styles.form_input}
-                            name="size"
-                            id="cars"
-                          >
-                            <option value="none">None</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="XXL">XXL</option>
-                            <option value="XXL">XXXL</option>
-                          </select>
-                          {/* <input
-                                      class={styles.form_input}
-                                        type="text"
-                                        name="size"
-                                        placeholder="Size"
-                                    /> */}
-                        </div>
-                        <div class="mb-6 ">
-                          <label class={styles.form_input_labels} for="color">
-                            Color
-                          </label>
-                          <input
-                            class={styles.form_input}
-                            type="color"
-                            name="color"
-                            required
-                          />
-                        </div>
-                        <div class="mb-6">
                           <label class={styles.form_input_labels} for="price">
                             price
                           </label>
@@ -288,6 +302,40 @@ const AddProduct = () => {
                             required
                           />
                         </div>
+                        <div class="mb-6 ">
+                          <p>Size</p>
+                          <table className="">
+                            {allSize.map((size) => (
+                              <tr>
+                                <td>
+                                  <input
+                                    id="chkOrange"
+                                    type="checkbox"
+                                    onClick={handleSize}
+                                    value={size}
+                                  />
+                                  <label for="chkOrange">{size}</label>
+                                </td>
+                              </tr>
+                            ))}
+                          </table>
+                        </div>
+                        <div class="mb-6 ">
+                          <p>Color</p>
+                          <div className="flex flex-wrap">
+                            {allColors.map((color) => (
+                              <div className="m-2">
+                                <input
+                                  id="chkOrange"
+                                  type="checkbox"
+                                  onClick={handleColor}
+                                  value={color}
+                                />
+                                <label for="chkOrange">{color}</label>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <div class="mb-6">
                           <label
                             class={styles.form_input_labels}
@@ -295,9 +343,9 @@ const AddProduct = () => {
                           >
                             Description
                           </label>
-                          <input
+                          <textarea
                             class={styles.form_input}
-                            type="textarea"
+                            type="Text"
                             name="description"
                             placeholder="Description"
                           />

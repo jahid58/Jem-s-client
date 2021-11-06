@@ -12,7 +12,7 @@ const Homepage = () => {
   return (
     <div>
       <Navbar></Navbar>
-      {/* <Sliders /> */}
+      <Sliders />
       {/* <MyCarousel /> */}
       <Products />
       <ProductByChoice />

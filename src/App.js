@@ -9,6 +9,7 @@ import AddProduct from "./components/admin/products/addProduct/AddProduct";
 import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
 import LoginPage from "./pages/LoginPage";
 import Topbar from "./components/navbar/topbar/Topbar";
+import SingleProduct from "./components/singleProduct/SingleProduct";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           </Route> */}
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/singleProduct/:id">
+            <SingleProduct></SingleProduct>
           </Route>
           <Route path="/">
             <Homepage></Homepage>

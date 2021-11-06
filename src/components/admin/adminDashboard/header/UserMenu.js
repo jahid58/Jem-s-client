@@ -5,38 +5,16 @@ import Transition from "../../../../utils/Transition";
 import UserAvatar from "../../../../images/user-avatar-32.png";
 
 import { store } from "./../../../../app/store";
+import { useDispatch } from "react-redux";
+import { logout } from "./../../../../redux/actions/action";
 
 function UserMenu() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const state = store.getState();
   const { name, email } = state.user;
+  const dispatch = useDispatch();
   const trigger = useRef(null);
   const dropdown = useRef(null);
-
-  // close on click outside
-  // useEffect(() => {
-  //   const clickHandler = ({ target }) => {
-  //     if (
-  //       !dropdownOpen ||
-  //       dropdown.current.contains(target) ||
-  //       trigger.current.contains(target)
-  //     )
-  //       return;
-  //     setDropdownOpen(false);
-  //   };
-  //   document.addEventListener("click", clickHandler);
-  //   return () => document.removeEventListener("click", clickHandler);
-  // });
-
-  // // close if the esc key is pressed
-  // useEffect(() => {
-  //   const keyHandler = ({ keyCode }) => {
-  //     if (!dropdownOpen || keyCode !== 27) return;
-  //     setDropdownOpen(false);
-  //   };
-  //   document.addEventListener("keydown", keyHandler);
-  //   return () => document.removeEventListener("keydown", keyHandler);
-  // });
 
   return (
     <div className="relative inline-flex z-50">
@@ -91,7 +69,7 @@ function UserMenu() {
             <li>
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="/"
+                to="/settings"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Settings
@@ -100,8 +78,8 @@ function UserMenu() {
             <li>
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="/"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                to="/home"
+                onClick={() => dispatch(logout())}
               >
                 Sign Out
               </Link>

@@ -42,13 +42,13 @@ function ProductOfChoice() {
   }, []);
 
   return (
-    <div className="my-4 p-4  h-full w-screen ">
-      <p className="text-2xl font-semibold border-b-2 m-4 p-2 uppercase  font-serif text-teal-900">
+    <div className="my-4   h-full w-screen ">
+      <p className="text-2xl font-semibold border-b-2  p-2 uppercase  font-serif text-teal-900">
         Make your choice
       </p>
       <div className="flex flex-wrap h-96 overflow-y-scroll product_double_row">
         {products.map((product) => (
-          <div class=" m-4 h-78 min-w-max   flex  items-center justify-center bg-transparent">
+          <div class=" m-2 h-78 min-w-max   flex  items-center justify-center bg-transparent">
             <div class=" bg-gray-900 shadow-lg rounded-xl p-4">
               <div class="flex flex-col">
                 <div class="">

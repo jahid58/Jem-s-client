@@ -43,7 +43,7 @@ const products = [
 
 const CartDropdown = () => {
   return (
-    <div className="   max-width-full absolute  mt-2  md:right-4  right-2 z-50  bg-green-50 text-purple-900">
+    <div className="   max-width-full absolute  mt-2  md:right-4  right-2 z-50  bg-teal-900 text-white">
       <div className="h-full flex flex-col  shadow-xl ">
         <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6 px-2">
           <h4 className="text-lg font-medium ">Shopping cart</h4>
@@ -94,7 +94,7 @@ const CartDropdown = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 py-6 px-4 sm:px-6 text-black">
+        <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
           <div className="flex justify-between text-base font-medium ">
             <p>Subtotal</p>
             <p>$22.00</p>

@@ -31,9 +31,6 @@ function Dashboard() {
 
   const { pathname } = location;
   const page = pathname.split("/")[2];
-  useEffect(() => {
-    console.log(page);
-  }, [page]);
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -79,7 +76,6 @@ function Dashboard() {
                 <DashboardCard08 />
                 {/* Stacked bar chart (Sales VS Refunds) */}
                 <DashboardCard09 />
-
                 {/* Card (Reasons for Refunds) */}
                 <DashboardCard11 />
                 {/* Card (Recent Activity) */}

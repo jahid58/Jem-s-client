@@ -10,13 +10,15 @@ function Products() {
 
   const [products, setProducts] = useState([]);
   useEffect(() => {
+    const idToken = sessionStorage.getItem("token");
+    console.log(idToken);
     const requestBody = {
       query: `
           query {
             products {
        rating
         title
-        
+        _id
               name
               size
               color

@@ -1,0 +1,15 @@
+.main_container {
+  @apply m-4 bg-gray-50;
+}
+.product_short_info {
+  @apply m-4 w-screen grid grid-cols-2 text-sm;
+}
+.additional_information_title {
+  @apply text-center text-xl uppercase;
+}
+.rating {
+  @apply text-2xl;
+}
+.rating_star {
+  @apply flex;
+}

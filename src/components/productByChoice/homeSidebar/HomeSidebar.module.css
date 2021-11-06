@@ -1,5 +1,5 @@
 .sidebar_container {
-  @apply m-4  max-w-min;
+  @apply ml-4 p-2 max-w-min;
 }
 .sidebar_criteria {
   @apply m-2  p-2;

@@ -26,7 +26,7 @@ const Footer = () => {
     { name: "Contact Us", link: "/hire" },
   ];
   return (
-    <div className="w-screen p-6 bg-indigo-50 text-teal-800 ">
+    <div className="w-screen p-6 font-sch bg-myTheme text-white">
       <div className=" md:grid grid-cols-2 gap-4">
         <div className="">
           <h1 className="text-xl font-semibold">NEWSLETTER SIGNUP</h1>

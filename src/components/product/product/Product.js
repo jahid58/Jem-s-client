@@ -1,12 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router";
 
 function Product({ product, itemId }) {
+  const history = useHistory();
   return (
     <div class=" m-4 h-78 min-w-max   flex  items-center justify-center bg-transparent">
       <div class=" bg-gray-900 shadow-lg rounded-xl p-4">
         <div class="flex flex-col">
           <div class="">
-            <div class="w-full mb-3">
+            <div
+              class="w-full mb-3"
+              onClick={() => history.push(`/singleProduct/${product._id}`)}
+            >
               <img src={product.img} alt="product img" className="w-56 h-44" />
             </div>
             <div class="flex-auto justify-evenly">

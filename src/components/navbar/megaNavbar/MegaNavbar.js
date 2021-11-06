@@ -1,3 +1,4 @@
+import { KeyboardArrowDown } from "@mui/icons-material";
 import { menuItemClasses } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -27,7 +28,9 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setNewArrival(true)}
                   onMouseLeave={() => setNewArrival(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {" "}
                     {newArrival &&
@@ -53,15 +56,17 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setMen(true)}
                   onMouseLeave={() => setMen(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {men &&
                       menuItem.items &&
                       menuItem.items.map((item) => (
                         <div class={styles.dropdown_item}>
                           <img src={item.img} alt="" />
-                          <h6 class="">{item.title}</h6>
-                          <div class=" p-2">
+                          <h6>{item.title}</h6>
+                          <div>
                             {item.items &&
                               item.items.map((it) => (
                                 <div class={styles.dropdown_item_data}>
@@ -82,7 +87,9 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setWoman(true)}
                   onMouseLeave={() => setWoman(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {" "}
                     {woman &&
@@ -112,7 +119,9 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setAccessories(true)}
                   onMouseLeave={() => setAccessories(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {" "}
                     {accessories &&
@@ -134,7 +143,9 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setSpecial(true)}
                   onMouseLeave={() => setSpecial(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {" "}
                     {special &&
@@ -153,7 +164,9 @@ const MegaNavbar = () => {
                   onMouseEnter={() => setBrands(true)}
                   onMouseLeave={() => setBrands(false)}
                 >
-                  <p class={menuItem.class}>{menuItem.title}</p>
+                  <p class={menuItem.class}>
+                    {menuItem.title} <KeyboardArrowDown />
+                  </p>
                   <div class={styles.dropdown}>
                     {" "}
                     {brands &&

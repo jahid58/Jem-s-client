@@ -38,6 +38,7 @@ const Login = (props) => {
     name: "",
     email: "",
     Password: "",
+    orders: [],
     error: "",
     isValid: true,
   });
@@ -54,9 +55,20 @@ const Login = (props) => {
   const handleGoogleSignIn = () => {
     googleSignIn().then((res) => {
       const userInfo = {
+        ...newUser,
         name: res.displayName,
         email: res.email,
       };
+      firebase
+        .auth()
+        .currentUser.getIdToken(/* forceRefresh */ true)
+        .then(function (idToken) {
+          sessionStorage.setItem("token", idToken);
+          // ...
+        })
+        .catch(function (error) {
+          // Handle error
+        });
       dispatch(login(userInfo));
       // //   getResponse(userInfo);
     });
@@ -78,11 +90,24 @@ const Login = (props) => {
       .createUserWithEmailAndPassword(newUser.email, newUser.password)
       .then((userCredential) => {
         const res = userCredential.user;
-        console.log(res);
+
         const userInfo = {
+          ...newUser,
           name: newUser.name,
           email: res.email,
         };
+        firebase
+          .auth()
+          .currentUser.getIdToken(/* forceRefresh */ true)
+          .then(function (idToken) {
+            // Send token to your backend via HTTPS
+
+            sessionStorage.setItem("token", idToken);
+            // ...
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         dispatch(login(userInfo));
         // // getResponse(userInfo);
       })

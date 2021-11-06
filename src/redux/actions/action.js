@@ -6,3 +6,7 @@ export const logout = () => ({
   type: "LOGOUT",
   payload: {},
 });
+export const orders = (content) => ({
+  type: "ADDORDERS",
+  payload: content,
+});

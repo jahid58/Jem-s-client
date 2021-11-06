@@ -1,0 +1,103 @@
+.container {
+  @apply m-4 p-4 flex font-serif font-normal bg-gray-50;
+}
+.img_box {
+  @apply w-1/3 h-full;
+}
+.second_box {
+  @apply m-4;
+}
+.title {
+  @apply text-2xl;
+}
+.short_info_box {
+  @apply flex;
+}
+.rating {
+  @apply flex;
+}
+.rating_star {
+  @apply fill-current text-yellow-500 w-2/3;
+}
+.short_info {
+  @apply text-sm text-blue-400 p-1;
+}
+.price {
+  @apply text-3xl font-bold text-orange-900;
+}
+.quantity {
+  @apply text-black m-2;
+}
+.colors_box {
+  @apply flex overflow-x-scroll;
+}
+.sizes_box {
+  @apply flex overflow-x-scroll;
+}
+.color_container {
+  @apply m-2;
+}
+.size_container {
+  @apply m-2;
+}
+.common_box {
+  @apply p-1 m-1  w-min  border-2 border-red-100 cursor-pointer  hover:bg-yellow-200;
+}
+.third_box {
+  @apply m-4;
+}
+/* .delivery_details {
+  @apply border-b-2;
+} */
+.delivery_heading {
+  @apply text-sm text-gray-500 font-medium;
+}
+.location_box {
+  @apply flex m-4 border-b-2;
+}
+.home_delivery_box {
+  @apply flex  justify-between m-4 border-b-2;
+}
+.delivery_box_icons {
+  @apply font-thin fill-current text-gray-500 mx-2;
+}
+.home_delivery_title {
+  @apply flex;
+}
+
+.home_delivery_time {
+  @apply text-gray-400 text-sm m-2 font-thin;
+}
+.cash_on_delivery {
+  @apply flex py-4 m-4 border-b-2;
+}
+.total_cost {
+  @apply flex font-semibold text-yellow-800 justify-between m-4;
+}
+.return_warranty_box {
+  @apply m-2 border-b-2;
+}
+.return_warranty_title {
+  @apply text-sm text-gray-500 font-medium;
+}
+.return_time_box {
+  @apply border-b-2;
+}
+.return_time {
+  @apply flex;
+}
+.change_off_mind {
+  @apply text-gray-400 text-sm font-thin m-4;
+}
+.warranty_time_box {
+  @apply flex  m-2 p-2;
+}
+.delivery_options_btns {
+  @apply flex justify-between;
+}
+.buy_now_btn {
+  @apply bg-blue-700 outline-none focus:ring-2 focus:border-yellow-200 px-4 m-2 p-2 text-white font-semibold;
+}
+.add_cart_btn {
+  @apply bg-yellow-500 outline-none focus:ring-2 focus:border-blue-200 px-4 m-2 p-2 text-white font-semibold;
+}

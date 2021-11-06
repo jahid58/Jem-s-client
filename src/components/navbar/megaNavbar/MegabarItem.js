@@ -1,7 +1,7 @@
 export const megabarData = [
   {
     title: "New Arrival",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4  flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
     items: [
       {
         title: "New Arrivals",
@@ -27,7 +27,7 @@ export const megabarData = [
   },
   {
     title: "Mens",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
 
     items: [
       {
@@ -60,7 +60,7 @@ export const megabarData = [
   },
   {
     title: "Womans",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
 
     items: [
       {
@@ -102,7 +102,7 @@ export const megabarData = [
   },
   {
     title: "Accessories",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
     items: [
       {
         title: "Watches",
@@ -164,11 +164,11 @@ export const megabarData = [
   },
   {
     title: "Special Offers",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4  flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
   },
   {
     title: "Brands",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
     items: [
       {
         title: "Full Nelson",
@@ -202,7 +202,7 @@ export const megabarData = [
   },
   {
     title: "gift",
-    class: "text-white mx-4 hover:underline ",
+    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
   },
 ];
 

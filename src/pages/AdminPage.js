@@ -8,7 +8,6 @@ const AdminPage = () => {
     <div>
       <Header />
       <div className="flex">
-        {" "}
         <Sidebar></Sidebar>
         <AddProduct />
       </div>

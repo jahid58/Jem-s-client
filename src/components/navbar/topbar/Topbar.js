@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import colors from "tailwindcss/colors";
+
 import {
-  AccountCircle,
   FavoriteBorder,
   MenuOutlined,
   Search,
@@ -28,7 +27,7 @@ const Topbar = () => {
       <div class={styles.searchOption}>
         <div
           class={styles.dropdown}
-          onMouseEnter={() => setSearchDropdown(true)}
+          onClick={() => setSearchDropdown(true)}
           onMouseLeave={() => setSearchDropdown(false)}
         >
           <button class={styles.dropdown_btn}> All categories</button>

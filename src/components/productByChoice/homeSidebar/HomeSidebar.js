@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { BlockTitle, List, ListItem, Range } from "tailwind-mobile/react";
 import { useHistory } from "react-router";
 const HomeSidebar = () => {
-  const [price, setPrice] = useState(150);
+  const [price, setPrice] = useState("");
   const history = useHistory();
   const handleClick = (data) => {
     if (history.location.pathname !== `/${data}`) {

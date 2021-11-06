@@ -17,14 +17,12 @@ module.exports = {
         teal: colors.teal,
         orange: colors.orange,
       },
-
       fontFamily: {
         sans: ["Roboto", "Helvetica", "Arial", "sans-serif"],
-
-        serif: ["Merriweather", "serif"],
-
-        mont: ["Montserrat", "sans-serif"],
-        sch: ["Scheherazade New", "serif"],
+        serif: ["Montserrat", "serif"],
+        sch: ["Scheherazade New", "sans-serif"],
+        Roboto: ["Roboto", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
@@ -37,12 +35,3 @@ module.exports = {
   },
   plugins: [],
 };
-// const tailwindMobileConfig = require('tailwind-mobile/config');
-
-// // wrap your config with tailwindMobileConfig
-// module.exports = tailwindMobileConfig({
-//   // JIT mode should be enabled
-//   mode: 'jit',
-//   // rest of your usual Tailwind CSS config here
-//   ...
-// });
