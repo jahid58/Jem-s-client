@@ -1,7 +1,7 @@
 export const megabarData = [
   {
     title: "New Arrival",
-    class: " mx-4  flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: "   flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
     items: [
       {
         title: "New Arrivals",
@@ -27,7 +27,7 @@ export const megabarData = [
   },
   {
     title: "Mens",
-    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: " flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md  ",
 
     items: [
       {
@@ -60,7 +60,7 @@ export const megabarData = [
   },
   {
     title: "Womans",
-    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: "  flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
 
     items: [
       {
@@ -102,7 +102,7 @@ export const megabarData = [
   },
   {
     title: "Accessories",
-    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: " flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
     items: [
       {
         title: "Watches",
@@ -164,11 +164,11 @@ export const megabarData = [
   },
   {
     title: "Special Offers",
-    class: " mx-4  flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: " flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
   },
   {
     title: "Brands",
-    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: " flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md  ",
     items: [
       {
         title: "Full Nelson",
@@ -187,22 +187,39 @@ export const megabarData = [
         path: "/counterfeit",
       },
       {
-        title: "Significant Other",
-        path: "/significant-Other",
+        title: "Easy",
+        path: "/Easy",
       },
       {
         title: "Best Buy",
         path: "/best-buy",
       },
       {
+        title: "Nike",
+        path: "/nike",
+      },
+
+      {
         title: "Belts Away",
         path: "/belts-away",
+      },
+      {
+        title: "Zodaic",
+        path: "/Zodaic",
+      },
+      {
+        title: "Adidas",
+        path: "/adidas",
+      },
+      {
+        title: "Reymon",
+        path: "/Reymon",
       },
     ],
   },
   {
     title: "gift",
-    class: " mx-4 flex p-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    class: " md:mx-4 p-2 flex hover:bg-gray-800 hover:text-white rounded-md ",
   },
 ];
 

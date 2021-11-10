@@ -10,18 +10,26 @@ import {
 import styles from "./Topbar.module.css";
 import CartDropdown from "./../cartDropdown/CartDropdown";
 import UserMenu from "./../../admin/adminDashboard/header/UserMenu";
-
+import { useHistory } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleMenu } from "../../../redux/actions/action";
 const category = [{ name: "mens" }, { name: "woman" }, { name: "kids" }];
 const Topbar = () => {
   const [searchDropdown, setSearchDropdown] = useState(false);
   const [cartDropdown, setCartDropdown] = useState(false);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   return (
     <div class={styles.topbar}>
       <div class={styles.left_top}>
-        <div class={styles.menu_icon}>
+        <div class={styles.menu_icon} onClick={() => dispatch(toggleMenu())}>
           <MenuOutlined fontSize="large"></MenuOutlined>
         </div>
-        <p class={styles.logo}> Jem's </p>
+        <p class={styles.logo} onClick={() => history.push("/home")}>
+          {" "}
+          Jem's{" "}
+        </p>
       </div>
 
       <div class={styles.searchOption}>

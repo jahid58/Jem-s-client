@@ -22,9 +22,7 @@ import {
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { login, logout } from "../../redux/actions/action";
-
-import { addUser } from "./../../redux/reducers/reducers";
+import { login } from "../../redux/actions/action";
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);

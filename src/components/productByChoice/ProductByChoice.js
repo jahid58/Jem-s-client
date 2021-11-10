@@ -4,7 +4,7 @@ import HomeSidebar from "./homeSidebar/HomeSidebar";
 
 const ProductByChoice = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap">
       <HomeSidebar />
       <ProductOfChoice />
     </div>

@@ -24,8 +24,12 @@ const SingleProduct = () => {
        img
       description
       price
-      department
+      gender
      brand
+     material
+     reviews{reviewer comment rating date}
+     discount{discountMessage discountAmount discountPercentage}
+     
 }}
                 `,
     };
@@ -41,6 +45,7 @@ const SingleProduct = () => {
 
       .then((resData) => {
         setProduct(resData.data.productById);
+        console.log(resData.data.productById);
       })
       .catch((err) => {
         console.log(err);

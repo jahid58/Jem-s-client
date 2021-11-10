@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 function ProductOfChoice() {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ function ProductOfChoice() {
             products {
        rating
         title
-        
+        _id
               name
               size
               color
@@ -17,7 +18,7 @@ function ProductOfChoice() {
                img
               description
               price
-              department
+              gender
              brand
             }
           }
@@ -40,7 +41,7 @@ function ProductOfChoice() {
         console.log(err);
       });
   }, []);
-
+  const history = useHistory();
   return (
     <div className="my-4   h-full w-screen ">
       <p className="text-2xl font-semibold border-b-2  p-2 uppercase  font-serif text-teal-900">
@@ -52,7 +53,12 @@ function ProductOfChoice() {
             <div class=" bg-gray-900 shadow-lg rounded-xl p-4">
               <div class="flex flex-col">
                 <div class="">
-                  <div class="w-full mb-3">
+                  <div
+                    class="w-full mb-3 cursor-pointer"
+                    onClick={() =>
+                      history.push(`/singleProduct/${product._id}`)
+                    }
+                  >
                     <img
                       src={product.img}
                       alt="product img"
@@ -83,7 +89,7 @@ function ProductOfChoice() {
                       </div>
                     </div>
                     <div class="text-xl text-white font-semibold mt-1">
-                      {product.title}
+                      {product.title.slice(0, 20)}....
                     </div>
                     <div class="lg:flex  py-4  text-sm text-gray-600">
                       <div class="flex-1 inline-flex items-center  mb-3">

@@ -4,6 +4,7 @@ const initialState = {
     email: "",
     orders: [],
   },
+  isMenuOpen: true,
 };
 
 const initialAction = {
@@ -34,6 +35,19 @@ export const addUser = (state = initialState, action = initialAction) => {
           ...state.user,
           orders,
         };
+      }
+      case "TOGGLEMENU": {
+        if (state.isMenuOpen === true) {
+          return {
+            ...state,
+            isMenuOpen: false,
+          };
+        } else {
+          return {
+            ...state,
+            isMenuOpen: true,
+          };
+        }
       }
       default:
         return state;

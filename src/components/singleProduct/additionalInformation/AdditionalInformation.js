@@ -13,7 +13,7 @@ const AdditionalInformation = ({ product }) => {
         <div className={styles.product_short_info}>
           <p> - Product Type:{product.name} </p>
           <p> - Gender : {product.category}</p>
-          <p> - Main Material : {product.brand}</p>
+          <p> - Main Material : {product.material}</p>
           <p> - Color : </p>
         </div>
         <div className={styles.product_description}>
@@ -42,9 +42,8 @@ const AdditionalInformation = ({ product }) => {
                 </p>
               ))}
           </div>
-          <p>{product?.total_rating} Ratings</p>
+          <small>({product.reviews?.length}) Ratings</small>
         </div>
-        <div className={styles.product_description}>{product.description}</div>
       </div>
       <div>
         {product.reviews?.map((review) => (

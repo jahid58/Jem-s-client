@@ -4,12 +4,12 @@ import { useHistory } from "react-router";
 function Product({ product, itemId }) {
   const history = useHistory();
   return (
-    <div class=" m-4 h-78 min-w-max   flex  items-center justify-center bg-transparent">
+    <div class=" m-4 h-78w-full  flex  items-center justify-center bg-transparent">
       <div class=" bg-gray-900 shadow-lg rounded-xl p-4">
         <div class="flex flex-col">
           <div class="">
             <div
-              class="w-full mb-3"
+              class="w-full mb-3 cursor-pointer"
               onClick={() => history.push(`/singleProduct/${product._id}`)}
             >
               <img src={product.img} alt="product img" className="w-56 h-44" />
@@ -37,8 +37,8 @@ function Product({ product, itemId }) {
                   </div>
                 </div>
               </div>
-              <div class="text-xl text-white font-semibold mt-1">
-                {product.title}
+              <div class="text-xl text-white font-semibold mt-1 overflow-hidden">
+                {product.title.slice(0, 20)}....
               </div>
               <div class="lg:flex  py-4  text-sm text-gray-600">
                 <div class="flex-1 inline-flex items-center  mb-3">

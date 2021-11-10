@@ -32,16 +32,14 @@ const AddProduct = () => {
     "tan",
   ];
   const allSize = ["M", "L", "XL", "XXL", "XXXL"];
-  const reviews = [
-    { reviewer: "suck", comment: "fuck", rating: 4 },
-    { reviewer: "suck", comment: "suck", rating: 4 },
-  ];
-  const discount = {
-    discountMessage: "fuck",
-    discountAmount: 4,
-    discountPercentage: 4,
-  };
+  let reviews = null;
   const handleSubmit = (e) => {
+    const discount = {
+      discountMessage: e.target.discountMessage.value,
+      discountAmount: e.target.discountAmount.value,
+      discountPercentage: e.target.discountPercentage.value,
+    };
+
     const requestBody = {
       query: `mutation {
         createProduct(productInput:  {
@@ -52,14 +50,17 @@ const AddProduct = () => {
         rating:${e.target.rating.value},
         category:"${e.target.category.value}",
         color:"${colors}",
-        gender:" ${e.target.department.value}",
+        gender:" ${e.target.gender.value}",
         price: ${e.target.price.value},
         brand:" ${e.target.brand.value}",
         img: "${imageURL}",
         date:"${e.target.date.value}",
-        discount:${discount},
+        discount:{
+           discountMessage: "${e.target.discountMessage.value}",
+          discountAmount: ${e.target.discountAmount.value},
+          discountPercentage: ${e.target.discountPercentage.value}},
         reviews:${reviews},
-        material:"jachhetai",
+        material:"${e.target.material.value}",
       }) {
           size 
          color
@@ -67,9 +68,9 @@ const AddProduct = () => {
       }
       `,
     };
-
+    console.log(requestBody, discount, reviews);
     // https://jems-server1.herokuapp.com/
-    const url = ` https://jems-server1.herokuapp.com/graphql`;
+    const url = `https://jems-server1.herokuapp.com/graphql`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -86,7 +87,6 @@ const AddProduct = () => {
           // e.target.reset();
         }
       });
-
     e.preventDefault();
   };
   const handleSize = (e) => {
@@ -95,6 +95,7 @@ const AddProduct = () => {
     if (isHave === -1) {
       setSizes([...sizes, e.target.value]);
     }
+    e.preventDefault();
   };
   const handleColor = (e) => {
     const isHave = colors.indexOf(e.target.value);
@@ -102,6 +103,7 @@ const AddProduct = () => {
     if (isHave === -1) {
       setColors([...colors, e.target.value]);
     }
+    e.preventDefault();
   };
   const handleImageUpload = (event) => {
     const imageData = new FormData();
@@ -118,6 +120,7 @@ const AddProduct = () => {
       .catch(function (error) {
         console.log(error);
       });
+    event.preventDefault();
   };
 
   return (
@@ -182,16 +185,13 @@ const AddProduct = () => {
                           />
                         </div>
                         <div class="mb-6">
-                          <label
-                            class={styles.form_input_labels}
-                            for="category"
-                          >
-                            Category
+                          <label class={styles.form_input_labels} for="gender">
+                            Gender
                           </label>
                           <select
                             class={styles.form_input}
-                            name="category"
-                            id="cars"
+                            name="gender"
+                            id="gender"
                           >
                             <option value="None">None</option>
                             <option value="Man">Man</option>
@@ -207,22 +207,39 @@ const AddProduct = () => {
                         <div class="mb-6">
                           <label
                             class={styles.form_input_labels}
-                            for="department"
+                            for="category"
                           >
-                            Department
+                            Category
                           </label>
                           <select
                             class={styles.form_input}
-                            name="department"
-                            id="cars"
+                            name="category"
+                            id="category"
                           >
-                            <option value="Clothing">Clothing</option>
-                            <option value="Grocery">Grocery</option>
-                            <option value="Cooking">Cooking</option>
-                            <option value="Phone">Phone</option>
+                            <option value="tops clothing">
+                              {" "}
+                              Tops Clothing
+                            </option>
+                            <option value="bottoms clothing">
+                              Bottoms Clothing
+                            </option>
+                            <option value="kid clothing">Cooking</option>
+                            <option value="shoes">Shoes</option>
                             <option value="Cosmetics">Cosmetics</option>
-                            <option value="Computer">Computer</option>
+                            <option value="Accessories">Accessories</option>
                           </select>
+                        </div>
+                        <div class="mb-4">
+                          <label class={styles.form_input_labels} for="name">
+                            Product Material
+                          </label>
+                          <input
+                            class={styles.form_input}
+                            type="text"
+                            name="material"
+                            placeholder="Product Material"
+                            required
+                          />
                         </div>
                         <div class="mb-4">
                           <label class={styles.form_input_labels} for="rating">
@@ -265,6 +282,7 @@ const AddProduct = () => {
                             min="1"
                             name="price"
                             placeholder="price"
+                            required
                           />
                         </div>{" "}
                         <div class="mb-6">
@@ -302,40 +320,6 @@ const AddProduct = () => {
                             required
                           />
                         </div>
-                        <div class="mb-6 ">
-                          <p>Size</p>
-                          <table className="">
-                            {allSize.map((size) => (
-                              <tr>
-                                <td>
-                                  <input
-                                    id="chkOrange"
-                                    type="checkbox"
-                                    onClick={handleSize}
-                                    value={size}
-                                  />
-                                  <label for="chkOrange">{size}</label>
-                                </td>
-                              </tr>
-                            ))}
-                          </table>
-                        </div>
-                        <div class="mb-6 ">
-                          <p>Color</p>
-                          <div className="flex flex-wrap">
-                            {allColors.map((color) => (
-                              <div className="m-2">
-                                <input
-                                  id="chkOrange"
-                                  type="checkbox"
-                                  onClick={handleColor}
-                                  value={color}
-                                />
-                                <label for="chkOrange">{color}</label>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
                         <div class="mb-6">
                           <label
                             class={styles.form_input_labels}
@@ -348,6 +332,65 @@ const AddProduct = () => {
                             type="Text"
                             name="description"
                             placeholder="Description"
+                            required
+                          />
+                        </div>
+                        <div class="mb-6 ">
+                          <p> Select Size</p>
+                          <table className="">
+                            {allSize.map((size) => (
+                              <tr>
+                                <td>
+                                  <input
+                                    id="checkSize"
+                                    type="checkbox"
+                                    onClick={handleSize}
+                                    value={size}
+                                  />
+                                  <label for="checkSize">{size}</label>
+                                </td>
+                              </tr>
+                            ))}
+                          </table>
+                        </div>
+                        <div class="mb-6 ">
+                          <p> Select Color</p>
+                          <div className="flex flex-wrap">
+                            {allColors.map((color) => (
+                              <div className="m-2">
+                                <input
+                                  id="chkOrange"
+                                  type="checkbox"
+                                  onClick={handleColor}
+                                  value={color}
+                                />
+                                <label for="checkColor">{color}</label>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        {/* discount section  */}
+                        <div class="mb-4">
+                          <label class={styles.form_input_labels} for="name">
+                            Discount
+                          </label>
+                          <input
+                            class={styles.form_input_discount}
+                            type="text"
+                            name="discountMessage"
+                            placeholder="Message"
+                          />
+                          <input
+                            class={styles.form_input_discount}
+                            type="Number"
+                            name="discountAmount"
+                            placeholder="Discount Amount"
+                          />
+                          <input
+                            class={styles.form_input_discount}
+                            type="Number"
+                            name="discountPercentage"
+                            placeholder="Discount Percentage"
                           />
                         </div>
                       </div>

@@ -8,7 +8,7 @@
   @apply block md:hidden mx-2 cursor-pointer   fill-current text-white;
 }
 .logo {
-  @apply font-semibold text-3xl font-serif my-auto text-white;
+  @apply font-semibold text-3xl font-serif my-auto text-white cursor-pointer;
 }
 .searchOption {
   @apply hidden w-2/3  sm:flex items-center;
@@ -27,10 +27,10 @@
 }
 
 .searchInput {
-  @apply p-2  h-10  w-full sm:w-2/3 appearance-none block  bg-gray-200 text-gray-700 border border-gray-200  leading-tight focus:outline-none focus:bg-white focus:border-gray-500;
+  @apply p-2  h-10  w-full sm:w-2/3 appearance-none block  bg-gray-50 text-gray-700 border border-gray-200  leading-tight focus:outline-none focus:bg-white focus:border-gray-500;
 }
 .searchIcon {
-  @apply bg-orange-400 fill-current h-10 text-black mr-4 px-4 py-2 rounded-r-md;
+  @apply bg-orange-400 fill-current h-10 text-black cursor-pointer mr-4 px-4 py-2 rounded-r-md;
 }
 .right_top {
   @apply flex justify-items-end;

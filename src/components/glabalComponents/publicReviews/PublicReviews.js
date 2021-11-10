@@ -1,8 +1,19 @@
+import { Shield } from "@mui/icons-material";
+import { Avatar } from "@mui/material";
 import React from "react";
 import styles from "./PublicReviews.module.css";
 const PublicReviews = ({ review }) => {
+  const reviewDate = review.date;
+
   return (
     <div className={styles.review_box}>
+      <div className={styles.reviewer_profile}>
+        {" "}
+        <Avatar className={styles.reviewer_profile_avatar} />{" "}
+        <p className={styles.reviewer}>{review.reviewer}</p>{" "}
+        <Shield className={styles.reviewer_profile_shield} />{" "}
+        <p>verified purchase </p>
+      </div>
       <div className={styles.rating_star}>
         {Array(review.rating)
           .fill()
@@ -18,10 +29,9 @@ const PublicReviews = ({ review }) => {
               </svg>
             </p>
           ))}
+        <p className={styles.review_time}> {reviewDate}</p>
       </div>
-      <p>{review.reviewer}</p>
       <p>{review.comment}</p>
-      <img src={review.img} alt="Public Photos" />
     </div>
   );
 };

@@ -1,3 +1,21 @@
+.review_box {
+  @apply bg-gray-100 shadow-sm m-4 p-4;
+}
 .rating_star {
-  @apply flex;
+  @apply flex items-center;
+}
+.reviewer_profile {
+  @apply flex items-center text-teal-600;
+}
+.reviewer_profile_avatar {
+  @apply text-sm;
+}
+.reviewer_profile_shield {
+  @apply text-sm text-teal-600 fill-current;
+}
+.reviewer {
+  @apply m-2 font-bold  text-lg text-black;
+}
+.review_time {
+  @apply m-2;
 }

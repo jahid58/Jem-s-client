@@ -10,3 +10,7 @@ export const orders = (content) => ({
   type: "ADDORDERS",
   payload: content,
 });
+export const toggleMenu = () => ({
+  type: "TOGGLEMENU",
+  payload: {},
+});

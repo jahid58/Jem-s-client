@@ -26,7 +26,7 @@ function Products() {
                img
               description
               price
-              department
+              gender
              brand
             }
           }

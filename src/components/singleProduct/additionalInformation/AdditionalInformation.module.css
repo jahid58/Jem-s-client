@@ -7,8 +7,11 @@
 .additional_information_title {
   @apply text-center text-xl uppercase;
 }
-.rating {
+.rating > p {
   @apply text-2xl;
+}
+.rating > small {
+  @apply text-sm;
 }
 .rating_star {
   @apply flex;
