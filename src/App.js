@@ -10,6 +10,8 @@ import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
 import LoginPage from "./pages/LoginPage";
 import Topbar from "./components/navbar/topbar/Topbar";
 import SingleProduct from "./components/singleProduct/SingleProduct";
+import ProductByChoice from "./components/productByChoice/ProductByChoice";
+import ProductOfChoice from "./components/productByChoice/ProductOfChoice/ProductOfChoice";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
         <Switch>
           <Route path="/home">
             <Homepage></Homepage>
+          </Route>
+          <Route path="/type/:id">
+            <ProductOfChoice />
           </Route>
           <Route path="/manageProduct">
             <ManageProduct></ManageProduct>

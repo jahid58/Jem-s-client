@@ -30,6 +30,7 @@ if (!firebase.apps.length) {
 const Login = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const [newUser, setNewUser] = useState({
@@ -67,7 +68,9 @@ const Login = (props) => {
         .catch(function (error) {
           // Handle error
         });
+      console.log(userInfo);
       dispatch(login(userInfo));
+
       // //   getResponse(userInfo);
     });
   };
@@ -106,6 +109,7 @@ const Login = (props) => {
           .catch(function (error) {
             console.log(error);
           });
+        console.log(userInfo);
         dispatch(login(userInfo));
         // // getResponse(userInfo);
       })

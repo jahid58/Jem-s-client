@@ -1,19 +1,35 @@
 export const items = [
   {
     title: "COLLECTIONS",
-    collection: ["Womans", "Mens", "Trending", "Best Seller"],
+    type: "category",
+    collection: ["Woman", "Man", "Trending", "Best Seller"],
   },
   {
     title: "PRODUCT TYPE",
-    collection: ["Dress", "Jeans", "Polo", "Scarf", " Shirt", "Pants"],
+    type: "name",
+    collection: [
+      "jacket",
+      "Jeans",
+      "Polo",
+      "Scarf",
+      " Shirt",
+      "T-shirt",
+      "Pants",
+    ],
   },
   {
     title: "COLOR",
+    type: "color",
     collection: ["red", "yellow", "green", "blue", "orange", "pink"],
   },
   {
     title: "SIZE",
+    type: "size",
     collection: ["M", "L", "XL", "XXL ", "XXXL"],
   },
-  { title: "PRICE", collection: ["Womans", "Mens", "Trending", "Best Seller"] },
+  {
+    title: "PRICE",
+    type: "price",
+    collection: ["Woman", "Men", "Trending", "Best Seller"],
+  },
 ];

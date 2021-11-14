@@ -11,7 +11,7 @@ function Products() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const idToken = sessionStorage.getItem("token");
-    console.log(idToken);
+
     const requestBody = {
       query: `
           query {
@@ -83,9 +83,7 @@ function LeftArrow() {
 
 function RightArrow() {
   const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
-  useEffect(() => {
-    console.log(isLastItemVisible);
-  }, [isLastItemVisible]);
+
   return (
     <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
       <ArrowForwardIosIcon />

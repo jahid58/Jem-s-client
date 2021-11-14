@@ -1,30 +1,67 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+import { useLocation, useHistory } from "react-router";
 
 function ProductOfChoice() {
   const [products, setProducts] = useState([]);
+  const loc = useLocation();
+  const history = useHistory();
+  // const [requestBody,setRequestBody] = useState([])
   useEffect(() => {
-    const requestBody = {
-      query: `
-          query {
-            products {
-       rating
-        title
-        _id
-              name
-              size
-              color
-              category
-               img
-              description
-              price
-              gender
-             brand
-            }
-          }
-              `,
-    };
+    const pathname = history.location.pathname.split("/");
+    let pathStartBy = pathname[1];
+    if (pathStartBy === "type") {
+      pathStartBy = "name";
+    }
+    const type = pathname[2];
+    let requestBody = {};
 
+    if (pathStartBy === "category" || "name" || "price" || "size" || "color") {
+      requestBody = {
+        query: `
+      query {
+        dynamicSearch(searchObject:{topic:"${pathStartBy}",value:"${type}"}){
+        name
+        rating
+        title
+        size
+        color
+        category
+         img
+        description
+        price
+        gender
+       brand
+       material
+       reviews{reviewer comment rating date}
+       discount{discountMessage discountAmount discountPercentage}
+       
+  }}
+              `,
+      };
+    } else {
+      requestBody = {
+        query: `
+      query {
+        products{
+        name
+        rating
+        title
+        size
+        color
+        category
+         img
+        description
+        price
+        gender
+       brand
+       material
+       reviews{reviewer comment rating date}
+       discount{discountMessage discountAmount discountPercentage}
+       
+  }}
+              `,
+      };
+    }
     fetch("https://jems-server1.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(requestBody),
@@ -35,20 +72,21 @@ function ProductOfChoice() {
       .then((res) => res.json())
 
       .then((resData) => {
-        setProducts(resData.data.products);
+        setProducts(resData.data.dynamicSearch);
+        console.log(products);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  const history = useHistory();
+  }, [loc.pathname]);
+
   return (
     <div className="my-4   h-full w-screen ">
-      <p className="text-2xl font-semibold border-b-2  p-2 uppercase  font-serif text-teal-900">
-        Make your choice
-      </p>
+      {products.length === 0 && (
+        <p className="text-gray-900 text-2xl">No results found</p>
+      )}
       <div className="flex flex-wrap h-96 overflow-y-scroll product_double_row">
-        {products.map((product) => (
+        {products?.map((product) => (
           <div class=" m-2 h-78 min-w-max   flex  items-center justify-center bg-transparent">
             <div class=" bg-gray-900 shadow-lg rounded-xl p-4">
               <div class="flex flex-col">
@@ -191,8 +229,8 @@ function ProductOfChoice() {
               </div>
             </div>
           </div>
-        ))}{" "}
-      </div>
+        ))}
+      </div>{" "}
     </div>
   );
 }

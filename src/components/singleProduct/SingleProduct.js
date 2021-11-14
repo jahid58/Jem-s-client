@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-import { store } from "./../../app/store";
 import AdditionalInformation from "./additionalInformation/AdditionalInformation";
 import ProductDetails from "./ProductDetails/ProductDetails";
 const SingleProduct = () => {
   const { id } = useParams();
-  const state = store.getState();
-  const { user } = state;
+
   const [product, setProduct] = useState({});
   useEffect(() => {
     const requestBody = {
       query: `
          
   query {
-    productById(_id:"${id}") {
+    
+      dynamicSearch(searchObject:{topic:"_id",value:"${id}"}){
       name
       rating
       title
@@ -31,9 +30,9 @@ const SingleProduct = () => {
      discount{discountMessage discountAmount discountPercentage}
      
 }}
-                `,
+   `,
     };
-
+    console.log(requestBody);
     fetch("https://jems-server1.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(requestBody),
@@ -44,8 +43,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
 
       .then((resData) => {
-        setProduct(resData.data.productById);
-        console.log(resData.data.productById);
+        setProduct(resData.data.dynamicSearch[0]);
       })
       .catch((err) => {
         console.log(err);

@@ -7,18 +7,23 @@ import { useHistory } from "react-router";
 const HomeSidebar = () => {
   const [price, setPrice] = useState("");
   const history = useHistory();
-  const handleClick = (data) => {
-    if (history.location.pathname !== `/${data}`) {
-      history.push(`/${data}`);
+  const handleClick = (data, type) => {
+    if (history.location.pathname !== `/${type}/${data}`) {
+      history.push(`/${type}/${data}`);
     } else {
       history.push("/");
     }
   };
   useEffect(() => {
-    history.push(`/${price}`);
+    if (price) {
+      history.push(`/price/${price}`);
+    }
   }, [price]);
   return (
     <div className={styles.sidebar_container}>
+      <p className="text-2xl font-semibold border-b-2  p-2 uppercase  font-serif text-teal-900">
+        Make your choice
+      </p>
       {items.map((item) => (
         <div className={styles.sidebar_criteria}>
           {item.title === "COLLECTIONS" && (
@@ -27,7 +32,7 @@ const HomeSidebar = () => {
               {item.collection.map((data) => (
                 <div
                   className="flex my-2 items-center "
-                  onClick={() => handleClick(data)}
+                  onClick={() => handleClick(data, item.type)}
                 >
                   <input
                     type="checkbox"
@@ -45,7 +50,7 @@ const HomeSidebar = () => {
               {item.collection.map((data) => (
                 <div
                   className="flex my-2 items-center "
-                  onClick={() => handleClick(data)}
+                  onClick={() => handleClick(data, item.type)}
                 >
                   <input
                     type="checkbox"
@@ -64,7 +69,7 @@ const HomeSidebar = () => {
 
               <ul class="flex flex-row justify-center items-center my-4 space-x-2">
                 {item.collection.map((color) => (
-                  <Link to={color}>
+                  <Link to={`/color/${color}`}>
                     <li
                       class={`bg-${color}-600 h-8 w-8 rounded-2xl cursor-pointer`}
                     ></li>
@@ -80,7 +85,7 @@ const HomeSidebar = () => {
               {item.collection.map((data) => (
                 <div
                   className="flex my-2 items-center "
-                  onClick={() => handleClick(data)}
+                  onClick={() => handleClick(data, item.type)}
                 >
                   <input
                     type="checkbox"

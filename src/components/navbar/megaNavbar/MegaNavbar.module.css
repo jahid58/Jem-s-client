@@ -1,14 +1,14 @@
 .megabar {
-  @apply bg-gray-200 md:bg-myTheme font-medium  font-serif md:h-12 w-min  md:w-screen md:flex justify-between items-start;
+  @apply bg-gray-200 md:bg-myTheme font-medium  font-serif md:h-16 w-min  md:w-screen md:flex justify-between items-start;
 }
 .megabar_menu {
-  @apply md:flex justify-start items-center  text-gray-900 md:h-12 md:text-white;
+  @apply md:flex justify-start items-center  text-gray-900 md:h-16 md:text-white;
 }
 .menu {
   @apply m-0 p-0;
 }
 .dropdown {
-  @apply bg-gray-700  text-white z-50 flex flex-wrap absolute  md:w-screen left-36 md:left-0 top-24  md:top-32 max-h-64 overflow-y-scroll;
+  @apply bg-gray-700  text-white z-50 flex flex-wrap absolute   left-32 md:left-0 top-24  md:top-32 md:h-screen;
 }
 .dropdown_item {
   @apply p-2 m-0 md:p-4 md:m-6;

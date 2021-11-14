@@ -54,7 +54,7 @@ const AddProduct = () => {
         price: ${e.target.price.value},
         brand:" ${e.target.brand.value}",
         img: "${imageURL}",
-        date:"${e.target.date.value}",
+       
         discount:{
            discountMessage: "${e.target.discountMessage.value}",
           discountAmount: ${e.target.discountAmount.value},

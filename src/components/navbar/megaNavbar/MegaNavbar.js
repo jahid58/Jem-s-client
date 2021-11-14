@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { megabarData } from "./MegabarItem";
 import styles from "./MegaNavbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { store } from "./../../../app/store";
+
 const MegaNavbar = () => {
   const isMenuOpen = useSelector((state) => state.user.isMenuOpen);
 
@@ -18,7 +18,6 @@ const MegaNavbar = () => {
   const [brands, setBrands] = useState(false);
   useEffect(() => {
     setMegaMenu(megabarData);
-    console.log(isMenuOpen);
   }, []);
   return (
     <div class={styles.megabar}>
@@ -48,7 +47,7 @@ const MegaNavbar = () => {
                           <img src={item.womanImg} alt="" />
                           <img src={item.shopImg} alt="" />
                         </div>
-                      ))}{" "}
+                      ))}
                   </div>
                 </div>
               );
@@ -75,7 +74,7 @@ const MegaNavbar = () => {
                             {item.items &&
                               item.items.map((it) => (
                                 <div class={styles.dropdown_item_data}>
-                                  <Link to={it}>{it}</Link>
+                                  <Link to={`/type/${it}`}>{it}</Link>
                                 </div>
                               ))}
                           </div>
@@ -107,7 +106,7 @@ const MegaNavbar = () => {
                             {item.items &&
                               item.items.map((it) => (
                                 <div class={styles.dropdown_item_data}>
-                                  <Link to={it}>{it}</Link>
+                                  <Link to={`/type/${it}`}>{it}</Link>
                                 </div>
                               ))}
                           </div>
@@ -173,14 +172,13 @@ const MegaNavbar = () => {
                     {menuItem.title} <KeyboardArrowDown />
                   </p>
                   <div class={styles.dropdown}>
-                    {" "}
                     {brands &&
                       menuItem.items &&
                       menuItem.items.map((item) => (
                         <div class={styles.dropdown_item}>
                           <p class={styles.dropdown_item_data}>{item.title}</p>
                         </div>
-                      ))}{" "}
+                      ))}
                   </div>
                 </div>
               );
@@ -188,7 +186,7 @@ const MegaNavbar = () => {
           })}
       </div>
       {isMenuOpen && (
-        <div className="flex pb-2 cursor-pointer overflow-hidden">
+        <div className="flex p-2 cursor-pointer overflow-hidden">
           <svg
             className="flex-shrink-0 mr-2 sm:mr-3"
             width="36"

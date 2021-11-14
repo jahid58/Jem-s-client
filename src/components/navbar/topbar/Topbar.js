@@ -62,7 +62,7 @@ const Topbar = () => {
       <div class={styles.right_top}>
         {" "}
         <div className={styles.wishlist}>
-          <FavoriteBorder></FavoriteBorder>{" "}
+          <FavoriteBorder></FavoriteBorder>
         </div>
         <div
           className={styles.cart}
