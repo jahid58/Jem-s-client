@@ -10,8 +10,10 @@ import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
 import LoginPage from "./pages/LoginPage";
 import Topbar from "./components/navbar/topbar/Topbar";
 import SingleProduct from "./components/singleProduct/SingleProduct";
-import ProductByChoice from "./components/productByChoice/ProductByChoice";
+import Footer from "./components/Footer/Footer";
 import ProductOfChoice from "./components/productByChoice/ProductOfChoice/ProductOfChoice";
+
+import MegaNavbar from "./components/navbar/megaNavbar/MegaNavbar";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/">
           <Topbar></Topbar>
         </Route>
+
         <Switch>
           <Route path="/home">
             <Homepage></Homepage>
@@ -33,12 +36,9 @@ function App() {
           <Route path="/addProduct">
             <AddProduct></AddProduct>
           </Route>
-          <Route path="/admin">
+          <Route exact path="/admin">
             <Dashboard></Dashboard>
           </Route>
-          {/* <Route path="/">
-            <Homepage />
-          </Route> */}
           <Route path="/login">
             <LoginPage />
           </Route>
@@ -47,6 +47,9 @@ function App() {
           </Route>
           <Route path="/">
             <Homepage></Homepage>
+          </Route>
+          <Route path="/">
+            <Footer />
           </Route>
         </Switch>
       </Router>
