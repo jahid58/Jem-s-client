@@ -68,7 +68,7 @@ const Login = (props) => {
         .catch(function (error) {
           // Handle error
         });
-      console.log(userInfo);
+
       dispatch(login(userInfo));
 
       // //   getResponse(userInfo);
@@ -109,7 +109,7 @@ const Login = (props) => {
           .catch(function (error) {
             console.log(error);
           });
-        console.log(userInfo);
+
         dispatch(login(userInfo));
         // // getResponse(userInfo);
       })

@@ -32,7 +32,7 @@ const SingleProduct = () => {
 }}
    `,
     };
-    console.log(requestBody);
+
     fetch("https://jems-server1.herokuapp.com/graphql", {
       method: "POST",
       body: JSON.stringify(requestBody),

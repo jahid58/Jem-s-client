@@ -51,6 +51,31 @@ function Sidebar() {
                 </div>
               </NavLink>
             </li>
+
+            {/* product */}
+            <li
+              className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                page === "products" && "bg-gray-900"
+              }`}
+            >
+              <NavLink
+                exact
+                to="/admin/products"
+                className={`block text-gray-200 hover:text-indigo-400 transition duration-150 ${
+                  page === "products" && "text-indigo-400"
+                }`}
+              >
+                <div className="flex flex-grow">
+                  <LocalGroceryStore
+                    className={`flex-shrink-0 h-6 w-6 mr-3 fill-current text-gray-400 ${
+                      page === "products" && "text-indigo-500"
+                    }`}
+                  />
+                  <span className="text-sm font-medium">Products</span>
+                </div>
+              </NavLink>
+            </li>
+
             {/* Customers */}
             <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -75,6 +100,7 @@ function Sidebar() {
                 </div>
               </NavLink>
             </li>
+
             {/* Orders */}
             <li
               className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -99,6 +125,7 @@ function Sidebar() {
 
                     <span className="text-sm font-medium">Orders</span>
                   </div>
+
                   {/* Badge */}
                   <div className="flex flex-shrink-0 ml-2">
                     <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded-sm">
@@ -108,29 +135,7 @@ function Sidebar() {
                 </div>
               </NavLink>
             </li>
-            {/* product */}
-            <li
-              className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                page === "products" && "bg-gray-900"
-              }`}
-            >
-              <NavLink
-                exact
-                to="/admin/products"
-                className={`block text-gray-200 hover:text-indigo-400 transition duration-150 ${
-                  page === "products" && "text-indigo-400"
-                }`}
-              >
-                <div className="flex flex-grow">
-                  <LocalGroceryStore
-                    className={`flex-shrink-0 h-6 w-6 mr-3 fill-current text-gray-400 ${
-                      page === "products" && "text-indigo-500"
-                    }`}
-                  />
-                  <span className="text-sm font-medium">Products</span>
-                </div>
-              </NavLink>
-            </li>
+
             {/* Team */}
 
             {/* Settings */}

@@ -21,15 +21,16 @@ import DashboardCard12 from "./DashboardCard12";
 import DashboardCard13 from "./DashboardCard13";
 import Banner from "./Banner";
 import { useLocation } from "react-router-dom";
-import AddProduct from "../../products/addProduct/AddProduct";
+import AddProduct from "../../productsManagement/addProduct/AddProduct";
 import Customer from "./Customer";
-import ProductAdministrator from "../../products/adminAdministrator/ProductAdminstrator";
+import ProductAdministrator from "../../productsManagement/adminAdministrator/ProductAdminstrator";
 
 function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
   const { pathname } = location;
+
   const page = pathname.split("/")[2];
 
   return (

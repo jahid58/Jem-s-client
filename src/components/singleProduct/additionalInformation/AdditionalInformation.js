@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./AdditionalInformation.module.css";
-import PublicReviews from "./../../glabalComponents/publicReviews/PublicReviews";
+import PublicReviews from "./../../globalComponents/publicReviews/PublicReviews";
+
 const AdditionalInformation = ({ product }) => {
   return (
     <div className={styles.main_container}>
@@ -9,10 +10,9 @@ const AdditionalInformation = ({ product }) => {
       </p>
       <div className={styles.product_info_box}>
         <h1>{product.product_title}</h1>
-
         <div className={styles.product_short_info}>
           <p> - Product Type:{product.name} </p>
-          <p> - Gender : {product.category}</p>
+          <p> - Gender : {product.gender}</p>
           <p> - Main Material : {product.material}</p>
           <p> - Color : </p>
         </div>

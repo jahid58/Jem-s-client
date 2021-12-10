@@ -19,7 +19,6 @@ const ProductDetails = ({ product }) => {
             <img src={product.img} alt="Products" />
           </div>
           <div className={styles.second_box}>
-            {" "}
             <p className={styles.title}>{product.title}</p>
             <div className={styles.short_info_box}>
               <div className={styles.rating}>

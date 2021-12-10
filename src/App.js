@@ -3,18 +3,14 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
-import ManageProduct from "./components/admin/products/manageProduct/ManageProduct";
-import AddProduct from "./components/admin/products/addProduct/AddProduct";
-
+import Topbar from "./components/Home/navbar/topbar/Topbar";
+import ProductOfChoice from "./components/Home/productByChoice/ProductOfChoice/ProductOfChoice";
+import ManageProduct from "./components/admin/productsManagement/manageProduct/ManageProduct";
 import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
-import LoginPage from "./pages/LoginPage";
-import Topbar from "./components/navbar/topbar/Topbar";
+import AddProduct from "./components/admin/productsManagement/addProduct/AddProduct";
 import SingleProduct from "./components/singleProduct/SingleProduct";
-import Footer from "./components/Footer/Footer";
-import ProductOfChoice from "./components/productByChoice/ProductOfChoice/ProductOfChoice";
-
-import MegaNavbar from "./components/navbar/megaNavbar/MegaNavbar";
-
+import LoginPage from "./pages/LoginPage";
+import UpdateProduct from "./components/admin/productsManagement/updateProduct/UpdateProduct";
 function App() {
   return (
     <div className="font-sans">
@@ -30,13 +26,16 @@ function App() {
           <Route path="/type/:id">
             <ProductOfChoice />
           </Route>
+          <Route path="/updateProduct/:id">
+            <UpdateProduct />
+          </Route>
           <Route path="/manageProduct">
             <ManageProduct></ManageProduct>
           </Route>
           <Route path="/addProduct">
             <AddProduct></AddProduct>
           </Route>
-          <Route exact path="/admin">
+          <Route path="/admin">
             <Dashboard></Dashboard>
           </Route>
           <Route path="/login">
@@ -47,9 +46,6 @@ function App() {
           </Route>
           <Route path="/">
             <Homepage></Homepage>
-          </Route>
-          <Route path="/">
-            <Footer />
           </Route>
         </Switch>
       </Router>

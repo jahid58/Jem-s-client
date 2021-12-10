@@ -1,21 +1,21 @@
 import React from "react";
 
-import Products from "./../components/product/products/Products";
-import PolicySection from "../components/policySection/PolicySection";
-
-import Sliders from "../components/carousel/Slider";
-
-import ProductByChoice from "../components/productByChoice/ProductByChoice";
-import MegaNavbar from "./../components/navbar/megaNavbar/MegaNavbar";
+import Sliders from "../components/Home/slider/Slider";
+import PolicySection from "./../components/Home/policySection/PolicySection";
+import ProductByChoice from "../components/Home/productByChoice/ProductByChoice";
+import Footer from "./../components/Home/Footer/Footer";
+import MegaNavbar from "./../components/Home/navbar/megaNavbar/MegaNavbar";
+import Products from "./../components/Home/product/products/Products";
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <MegaNavbar />
-      {/* <Sliders /> */}
+      <Sliders />
       <Products />
       <ProductByChoice />
       <PolicySection />
+      <Footer />
     </div>
   );
 };
