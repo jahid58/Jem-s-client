@@ -7,7 +7,7 @@ import styles from "./MegaNavbar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 
 const MegaNavbar = () => {
-  const isMenuOpen = useSelector((state) => state.user.isMenuOpen);
+  const isMenuOpen = useSelector((state) => state.store.isMenuOpen);
 
   const [megaMenu, setMegaMenu] = useState([]);
   const [newArrival, setNewArrival] = useState(false);
@@ -192,7 +192,7 @@ const MegaNavbar = () => {
 
         {isMenuOpen && (
           <div className="flex items-center cursor-pointer overflow-hidden">
-            <button className="text-xl font-bold cursor-pointer md:block hidden hover:text-white hover:bg-gray-600 bg-gray-200 text-gray-900 p-3 m-3 rounded-2xl font-sch">
+            <button className="lg:text-xl text-sm font-normal lg:font-bold cursor-pointer md:block hidden hover:text-white hover:bg-gray-900 bg-gray-200 text-gray-900 p-2 m-2 rounded-2xl font-sch">
               <Link to="/admin"> Go to Super Admin</Link>{" "}
             </button>
             <svg

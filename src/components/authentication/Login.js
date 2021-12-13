@@ -37,7 +37,6 @@ const Login = (props) => {
     name: "",
     email: "",
     Password: "",
-    orders: [],
     error: "",
     isValid: true,
   });

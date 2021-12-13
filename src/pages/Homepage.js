@@ -11,7 +11,7 @@ const Homepage = () => {
   return (
     <div className="bg-gray-100">
       <MegaNavbar />
-      <Sliders />
+      {/* <Sliders /> */}
       <Products />
       <ProductByChoice />
       <PolicySection />

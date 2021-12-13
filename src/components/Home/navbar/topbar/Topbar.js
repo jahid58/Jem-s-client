@@ -10,19 +10,17 @@ import styles from "./Topbar.module.css";
 import CartDropdown from "../cartDropdown/CartDropdown";
 import UserMenu from "../../../admin/adminDashboard/header/UserMenu";
 import { useHistory } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../../../../redux/actions/action";
-const category = [{ name: "mens" }, { name: "woman" }, { name: "kids" }];
+
 const Topbar = () => {
-  const [searchDropdown, setSearchDropdown] = useState(false);
   const [searchedInput, setSearchedInput] = useState("");
   const [cartDropdown, setCartDropdown] = useState(false);
-  const [products, setProducts] = useState([]);
+
   const history = useHistory();
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log(searchedInput);
-  }, [searchedInput]);
+  const store = useSelector((state) => state.store);
+
   const handleSearch = (data) => {
     history.push(`/type/${data}`);
   };
@@ -54,7 +52,6 @@ const Topbar = () => {
         </div>
       </div>
       <div class={styles.right_top}>
-        {" "}
         <div className={styles.wishlist}>
           <FavoriteBorder></FavoriteBorder>
         </div>
@@ -63,12 +60,14 @@ const Topbar = () => {
           onMouseEnter={() => setCartDropdown(true)}
           onMouseLeave={() => setCartDropdown(false)}
         >
-          {" "}
-          <ShoppingCart></ShoppingCart>
-          {cartDropdown && <CartDropdown></CartDropdown>}
+          <p className={styles.cart_count}>{store.cartProduct?.length} </p>
+          <div className={styles.cart_icon}>
+            <ShoppingCart></ShoppingCart>
+            {cartDropdown && <CartDropdown></CartDropdown>}
+          </div>
         </div>
         <div className={styles.account}>
-          <UserMenu />
+          <UserMenu user={store} dispatch={dispatch} />
         </div>
       </div>
     </div>

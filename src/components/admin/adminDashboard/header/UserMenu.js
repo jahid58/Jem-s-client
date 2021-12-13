@@ -2,14 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../../../../utils/Transition";
 
-import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./../../../../redux/actions/action";
 import { Avatar } from "@mui/material";
 
-function UserMenu() {
+function UserMenu({ user, dispatch }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+
   const trigger = useRef(null);
   const dropdown = useRef(null);
 

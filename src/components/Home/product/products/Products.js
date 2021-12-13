@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import Arrow from "../product/Arrow";
-import Product from "../product/Product";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ProductCard from "./../../../globalComponents/publicReviews/ProductCard";
 
 function Products() {
-  const [selected, setSelected] = useState([]);
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const idToken = sessionStorage.getItem("token");
@@ -57,11 +55,11 @@ function Products() {
       </p>
 
       <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-        {products.map((product) => (
-          <Product
-            itemId={product.title}
+        {products?.map((product) => (
+          <ProductCard
+            itemId={product._id}
             title={product.title}
-            key={product.title}
+            key={product._id}
             product={product}
           />
         ))}

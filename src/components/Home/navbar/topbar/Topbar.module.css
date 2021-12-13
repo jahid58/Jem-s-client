@@ -40,8 +40,14 @@
 }
 
 .wishlist {
-  @apply p-4 cursor-pointer hover:bg-teal-700 my-auto rounded-2xl;
+  @apply p-4 font-bold cursor-pointer hover:bg-gray-900 my-auto rounded-2xl;
 }
 .cart {
-  @apply p-4 cursor-pointer hover:bg-teal-700 my-auto rounded-2xl;
+  @apply p-4 cursor-pointer  my-auto rounded-t-2xl hover:bg-gray-900;
+}
+.cart_count {
+  @apply -mb-2 rounded-lg text-center;
+}
+.cart_icon {
+  @apply hover:text-yellow-200;
 }
