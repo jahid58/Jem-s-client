@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeProduct } from "../../../../redux/actions/action";
 
 const CartDropdown = () => {
   const [products, setProducts] = useState([]);
-  const { cartProduct } = useSelector((state) => state.store);
-  const [totalCount, setTotalCount] = useState({});
-  useEffect(() => {
-    const total = cartProduct.reduce((total, pd) => (total += pd.price), 0);
-    setTotalCount({
-      subTotal: total,
-      tax: total * 0.01,
-      total: total + total * 0.1,
-    });
-  }, [cartProduct, products]);
+  const { cartProduct, totalCount } = useSelector((state) => state.store);
+
+  const dispatch = useDispatch();
+  const handleRemove = (id) => {
+    dispatch(removeProduct(id));
+  };
 
   return (
     <div className=" max-width-full absolute  mt-2  md:right-4 shadow right-2 z-50  bg-gray-900 text-gray-100 rounded-md">
@@ -49,12 +46,10 @@ const CartDropdown = () => {
                         <p className="mt-1 text-sm  ">{product.color[0]}</p>
                       </div>
                       <div className="flex-1 flex items-end justify-between text-sm">
-                        <p className="">Qty : {product.quantity}</p>
-
                         <div className="flex">
                           <button
-                            type="button"
                             className="font-medium  hover:text-indigo-500"
+                            onClick={() => handleRemove(product._id)}
                           >
                             Remove
                           </button>
@@ -87,16 +82,16 @@ const CartDropdown = () => {
           <div className="mt-4 flex justify-between">
             <Link
               to="/viewCart"
-              className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+              className="flex justify-center items-center p-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Continue shopping
             </Link>
 
             <Link
-              to="/viewCart"
-              className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+              to="/Checkout"
+              className="flex justify-center items-center p-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
             >
-              View Cart
+              Checkout
             </Link>
           </div>
         </div>

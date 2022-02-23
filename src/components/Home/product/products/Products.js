@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import Arrow from "../product/Arrow";
+import Arrow from "./Arrow";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ProductCard from "./../../../globalComponents/publicReviews/ProductCard";
+import ProductCard from "../../../globalComponents/ProductCard";
 
 function Products() {
   const [products, setProducts] = useState([]);

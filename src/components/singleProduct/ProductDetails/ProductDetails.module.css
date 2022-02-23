@@ -1,11 +1,11 @@
 .container {
-  @apply m-4 p-4 flex font-serif font-normal bg-gray-50;
+  @apply m-4 p-4 flex flex-wrap font-serif font-normal bg-gray-50;
 }
 .img_box {
-  @apply w-1/3 h-full;
+  @apply h-full max-w-sm;
 }
 .second_box {
-  @apply m-4  w-1/3;
+  @apply m-4;
 }
 .title {
   @apply text-2xl;

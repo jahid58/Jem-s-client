@@ -12,18 +12,15 @@ import UserMenu from "../../../admin/adminDashboard/header/UserMenu";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../../../../redux/actions/action";
+import AutoSearch from "./AutoSearch";
 
 const Topbar = () => {
   const [searchedInput, setSearchedInput] = useState("");
   const [cartDropdown, setCartDropdown] = useState(false);
-
   const history = useHistory();
   const dispatch = useDispatch();
   const store = useSelector((state) => state.store);
 
-  const handleSearch = (data) => {
-    history.push(`/type/${data}`);
-  };
   return (
     <div class={styles.topbar}>
       <div class={styles.left_top}>
@@ -36,38 +33,30 @@ const Topbar = () => {
       </div>
 
       <div class={styles.searchOption}>
-        <input
-          class={styles.searchInput}
-          type="text"
-          placeholder="what you are looking for"
-          onMouseMove={(e) => setSearchedInput(e.target.value)}
-        />
-
-        <div
-          class={styles.searchIcon}
-          onClick={() => handleSearch(searchedInput)}
-        >
-          {" "}
-          <Search> </Search>
-        </div>
+        <AutoSearch>/</AutoSearch>
       </div>
       <div class={styles.right_top}>
         <div className={styles.wishlist}>
-          <FavoriteBorder></FavoriteBorder>
+          <p className={styles.wish_count}>{store?.favoriteProduct?.length} </p>{" "}
+          <div className={styles.wishlist_icon}>
+            <FavoriteBorder fontSize="large"></FavoriteBorder>
+          </div>
         </div>
         <div
           className={styles.cart}
           onMouseEnter={() => setCartDropdown(true)}
           onMouseLeave={() => setCartDropdown(false)}
         >
-          <p className={styles.cart_count}>{store.cartProduct?.length} </p>
+          {" "}
+          <p className={styles.cart_count}>{store?.cartProduct?.length} </p>
           <div className={styles.cart_icon}>
-            <ShoppingCart></ShoppingCart>
+            <ShoppingCart fontSize="large"></ShoppingCart>
+
             {cartDropdown && <CartDropdown></CartDropdown>}
           </div>
         </div>
         <div className={styles.account}>
-          <UserMenu user={store} dispatch={dispatch} />
+          <UserMenu user={store.user} />
         </div>
       </div>
     </div>

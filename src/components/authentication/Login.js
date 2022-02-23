@@ -69,7 +69,7 @@ const Login = (props) => {
         });
 
       dispatch(login(userInfo));
-
+      history.replace(from);
       // //   getResponse(userInfo);
     });
   };
@@ -110,6 +110,7 @@ const Login = (props) => {
           });
 
         dispatch(login(userInfo));
+        history.replace(from);
         // // getResponse(userInfo);
       })
       .catch((res) => {
@@ -192,7 +193,10 @@ const Login = (props) => {
             onClick={handleGoogleSignIn}
           >
             <br />
-            <FontAwesomeIcon icon={faGoogle} />
+            <div className="m-2">
+              {" "}
+              <FontAwesomeIcon icon={faGoogle} />{" "}
+            </div>
             Sign In with Google
           </Button>
         </form>

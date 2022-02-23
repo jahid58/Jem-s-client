@@ -4,8 +4,10 @@ import Transition from "../../../../utils/Transition";
 
 import { logout } from "./../../../../redux/actions/action";
 import { Avatar } from "@mui/material";
+import { useDispatch } from "react-redux";
 
-function UserMenu({ user, dispatch }) {
+function UserMenu({ user }) {
+  const dispatch = useDispatch();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef(null);

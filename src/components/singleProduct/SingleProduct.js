@@ -14,6 +14,7 @@ const SingleProduct = () => {
   query {
     
       dynamicSearch(searchObject:{topic:"_id",value:"${id}"}){
+        _id
       name
       rating
       title
@@ -52,8 +53,10 @@ const SingleProduct = () => {
 
   return (
     <div>
-      <ProductDetails product={product} key={id} />
-      <AdditionalInformation product={product} key={id} />
+      <div>
+        <ProductDetails product={product} key={id} />
+        <AdditionalInformation product={product} key={id} />
+      </div>
     </div>
   );
 };

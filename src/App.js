@@ -6,11 +6,14 @@ import Homepage from "./pages/Homepage";
 import Topbar from "./components/Home/navbar/topbar/Topbar";
 import ProductOfChoice from "./components/Home/productByChoice/ProductOfChoice/ProductOfChoice";
 import ManageProduct from "./components/admin/productsManagement/manageProduct/ManageProduct";
-import Dashboard from "./components/admin/adminDashboard/dashboard/Dashboard";
+
 import AddProduct from "./components/admin/productsManagement/addProduct/AddProduct";
 import SingleProduct from "./components/singleProduct/SingleProduct";
 import LoginPage from "./pages/LoginPage";
 import UpdateProduct from "./components/admin/productsManagement/updateProduct/UpdateProduct";
+import AdminPage from "./pages/AdminPage";
+import PrivateRoute from "./components/globalComponents/PrivateRoute";
+import Checkout from "./components/checkout/Checkout";
 function App() {
   return (
     <div className="font-sans">
@@ -32,12 +35,15 @@ function App() {
           <Route path="/manageProduct">
             <ManageProduct></ManageProduct>
           </Route>
+          <PrivateRoute path="/checkout">
+            <Checkout />
+          </PrivateRoute>
           <Route path="/addProduct">
             <AddProduct></AddProduct>
           </Route>
-          <Route path="/admin">
-            <Dashboard></Dashboard>
-          </Route>
+          <PrivateRoute path="/admin">
+            <AdminPage></AdminPage>
+          </PrivateRoute>
           <Route path="/login">
             <LoginPage />
           </Route>

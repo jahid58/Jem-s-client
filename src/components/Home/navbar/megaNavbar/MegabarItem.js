@@ -1,31 +1,5 @@
 export const megabarData = [
   {
-    title: "New Arrival",
-    class: "   flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
-    items: [
-      {
-        title: "New Arrivals",
-        path: "/shop",
-        womenImg:
-          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-        menImg:
-          "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
-        shopImg:
-          "https://images.unsplash.com/photo-1622979138084-c03ae28968ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      },
-      {
-        title: "Basic Tees",
-        path: "/shop",
-        womenImg:
-          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-        menImg:
-          "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
-        shopImg:
-          "https://images.unsplash.com/photo-1515849430397-7aee921bbea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      },
-    ],
-  },
-  {
     title: "Mens",
     class: " flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md  ",
 
@@ -123,6 +97,32 @@ export const megabarData = [
           "shorts",
           "vintage",
         ],
+      },
+    ],
+  },
+  {
+    title: "New Arrival",
+    class: "   flex p-1 lg:mx-2 hover:bg-gray-800 hover:text-white rounded-md ",
+    items: [
+      {
+        title: "New Arrivals",
+        path: "/shop",
+        womenImg:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
+        menImg:
+          "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
+        shopImg:
+          "https://images.unsplash.com/photo-1622979138084-c03ae28968ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        title: "Basic Tees",
+        path: "/shop",
+        womenImg:
+          "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
+        menImg:
+          "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
+        shopImg:
+          "https://images.unsplash.com/photo-1515849430397-7aee921bbea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       },
     ],
   },

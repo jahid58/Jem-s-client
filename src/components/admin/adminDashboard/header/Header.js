@@ -3,8 +3,10 @@ import SearchModal from "./SearchModal";
 import Notifications from "./Notifications";
 import Help from "./Help";
 import UserMenu from "./UserMenu";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const store = useSelector((state) => state.store);
   return (
     <header className="sticky top-0 bg-white border-b border-gray-200 z-30 ">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -34,7 +36,7 @@ function Header() {
             <SearchModal />
             <Notifications />
             <Help />
-            <UserMenu />
+            <UserMenu user={store} />
             {/*  Divider */}
             <hr className="w-px h-6 bg-gray-200 mx-3" />
           </div>

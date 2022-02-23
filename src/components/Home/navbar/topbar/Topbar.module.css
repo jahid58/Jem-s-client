@@ -40,14 +40,20 @@
 }
 
 .wishlist {
-  @apply p-4 font-bold cursor-pointer hover:bg-gray-900 my-auto rounded-2xl;
+  @apply p-2 mx-2  bg-transparent cursor-pointer hover:text-yellow-300 my-auto;
+}
+.wishlist_icon {
+  @apply hover:text-yellow-300 z-50;
+}
+.wish_count {
+  @apply rounded-full   text-center font-thin -mb-2;
 }
 .cart {
-  @apply p-4 cursor-pointer  my-auto rounded-t-2xl hover:bg-gray-900;
+  @apply p-2 cursor-pointer   my-auto;
 }
 .cart_count {
-  @apply -mb-2 rounded-lg text-center;
+  @apply rounded-full text-center z-50   px-2 font-thin -mb-2;
 }
 .cart_icon {
-  @apply hover:text-yellow-200;
+  @apply hover:text-yellow-200 font-semibold;
 }

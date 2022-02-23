@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useHistory } from "react-router";
-import { useDispatch } from "react-redux";
-import { orders } from "../../../../redux/actions/action";
-import ProductCard from "../../../globalComponents/publicReviews/ProductCard";
+import ProductCard from "../../../globalComponents/ProductCard";
 
 function ProductOfChoice() {
   const [products, setProducts] = useState([]);
@@ -81,8 +79,9 @@ function ProductOfChoice() {
       .then((res) => res.json())
 
       .then((resData) => {
-        setProducts(resData.data.dynamicSearch);
-        console.log(products);
+        const newProducts = resData.data.dynamicSearch;
+
+        setProducts([...newProducts, ...products]);
       })
       .catch((err) => {
         console.log(err);

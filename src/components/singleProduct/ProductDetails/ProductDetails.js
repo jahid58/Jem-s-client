@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+
 import styles from "./ProductDetails.module.css";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { orders } from "./../../../redux/actions/action";
+import { useHistory } from "react-router";
 import {
   CropSquareSharp,
   HomeOutlined,
@@ -11,6 +15,15 @@ import {
 } from "@mui/icons-material";
 
 const ProductDetails = ({ product }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const handleAddToCart = (product) => {
+    dispatch(orders(product));
+  };
+  const handleBuying = (product) => {
+    handleAddToCart(product);
+    history.replace("/checkout");
+  };
   return (
     <div>
       {product && (
@@ -139,8 +152,18 @@ const ProductDetails = ({ product }) => {
               </div>
             </div>{" "}
             <div className={styles.delivery_option_btns}>
-              <button className={styles.buy_now_btn}> Buy Now</button>
-              <button className={styles.add_cart_btn}>Add to Cart</button>
+              <button
+                className={styles.buy_now_btn}
+                onClick={() => handleBuying(product)}
+              >
+                Buy Now
+              </button>
+              <button
+                className={styles.add_cart_btn}
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>

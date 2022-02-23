@@ -24,6 +24,9 @@ module.exports = {
         Roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      height: {
+        lg: "1000px",
+      },
     },
   },
   variants: {

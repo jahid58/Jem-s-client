@@ -3,13 +3,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "../addProduct/Addproduct.module.css";
 import { useParams } from "react-router";
-
+import { useHistory } from "react-router-dom";
 const UpdateProduct = ({ modalTitle }) => {
   const [imageURL, setImageURL] = useState(null);
   const [imageURLStatus, setImageURLStatus] = useState();
   const [product, setProduct] = useState({});
 
-  const [dbStatus, setDbStatus] = useState(false);
+  const history = useHistory();
 
   const [sizes, setSizes] = useState([]);
   const [colors, setColors] = useState([]);
@@ -37,7 +37,6 @@ const UpdateProduct = ({ modalTitle }) => {
   const allSize = ["M", "L", "XL", "XXL", "XXXL"];
   let reviews = null;
   useEffect(() => {
-    console.log(id);
     const requestBody = {
       query: `
          
@@ -79,6 +78,7 @@ const UpdateProduct = ({ modalTitle }) => {
         console.log(err);
       });
   }, [id]);
+
   const handleSubmit = (e) => {
     // request query for fetching products
 
@@ -111,7 +111,7 @@ const UpdateProduct = ({ modalTitle }) => {
       `,
     };
     // fetching data from database
-    console.log(requestBody);
+
     const url = `https://jems-server1.herokuapp.com/graphql`;
     fetch(url, {
       method: "POST",
@@ -122,12 +122,9 @@ const UpdateProduct = ({ modalTitle }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setDbStatus(data);
-
         if (data) {
           alert("Product added successfully");
-          console.log(data);
-          // e.target.reset();
+          history.push("/admin/products");
         }
       })
       .catch((err) => console.log(err));

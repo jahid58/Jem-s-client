@@ -7,10 +7,18 @@ export const logout = () => ({
   payload: {},
 });
 export const orders = (content) => ({
-  type: "ADDORDERS",
+  type: "ADD_ORDERS",
   payload: content,
 });
 export const toggleMenu = () => ({
-  type: "TOGGLEMENU",
+  type: "TOGGLE_MENU",
   payload: {},
+});
+export const removeProduct = (content) => ({
+  type: "REMOVE_PRODUCT",
+  payload: content,
+});
+export const addFavorite = (content) => ({
+  type: "ADD_FAVORITE",
+  payload: content,
 });

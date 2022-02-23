@@ -20,7 +20,7 @@ const Sliders = () => {
     fade: true,
   };
   return (
-    <div className="mx-2 xs:grid-cols-1 md:grid grid-cols-3 gap-2 slider my-4 slider-box md:w-screen w-2/3">
+    <div className="mx-2 xs:grid-cols-1 md:grid grid-cols-3 gap-2 slider my-4 slider-box w-screen ">
       <div className="md:col-span-2 slider-blog">
         <Slider {...settings}>
           <div className="sin-slider-blog cursor-pointer">

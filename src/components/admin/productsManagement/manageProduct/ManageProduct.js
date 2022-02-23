@@ -47,6 +47,7 @@ const ManageProduct = () => {
 
   //Fetching Product.............................................
   useEffect(() => {
+    console.log(window, document);
     const requestBody = {
       query: `
           query {

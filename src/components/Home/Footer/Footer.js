@@ -15,7 +15,7 @@ const Footer = () => {
     { name: "Investor Relations", link: "//google.com/map" },
     { name: "Blog", link: "//google.com/map" },
   ];
-  const CustomerCare = [];
+
   const BuyWithUs = [
     { name: "Track your orders", link: "/emergency" },
     { name: "Privacy Policy", link: "/hire" },
@@ -26,18 +26,18 @@ const Footer = () => {
     { name: "Contact Us", link: "/hire" },
   ];
   return (
-    <div className="w-screen p-6 font-sch bg-myTheme text-white">
+    <div className="w-screen p-6 font-sch bg-gray-900 text-white">
       <div className=" md:grid grid-cols-2 gap-4">
         <div className="">
           <h1 className="text-xl font-semibold">NEWSLETTER SIGNUP</h1>
           <p>
             Sign up for our e-mail and be the first who know our special offers!
           </p>
-          <div className="flex  m-2">
+          <div className="flex m-2">
             <input
               type="text"
               placeholder="Enter your e-mail"
-              className="p-2  focus:outline-none  rounded-md md:w-72  focus:ring focus:border-blue-300 "
+              className="p-2  focus:outline-none   md:w-72  focus:ring focus:border-blue-300 text-black"
             />
             <div className="bg-blue-300  p-2 text-center cursor-pointer ">
               Join Us

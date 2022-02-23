@@ -19,7 +19,7 @@ const PolicySection = () => {
       <div className="text-center p-4">
         <Autorenew style={{ fontSize: "40px", color: "green" }} />
         <div>
-          <p className="text-xl "> 30 Days return</p>
+          <p className="text-xl ">30 Days return</p>
           <p className="text-gray-500 font-Roboto text-sm">
             Simply return in within 24 days in a week
           </p>
