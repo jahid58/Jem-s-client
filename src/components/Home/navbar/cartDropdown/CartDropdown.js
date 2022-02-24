@@ -14,7 +14,7 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className=" max-width-full absolute  mt-2  md:right-4 shadow right-2 z-50  bg-gray-900 text-gray-100 rounded-md">
+    <div className=" max-width-full absolute     md:right-4 shadow right-2 z-50  bg-gray-900 text-gray-100 rounded-md">
       <div className="h-full flex flex-col  shadow-xl ">
         <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6 px-2">
           <h4 className="text-lg font-medium ">Shopping cart</h4>

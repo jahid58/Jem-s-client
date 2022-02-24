@@ -62,7 +62,7 @@ function AutoSearch() {
     <div>
       <header>
         {items.length && (
-          <div style={{ width: 600 }}>
+          <div>
             <ReactSearchAutocomplete
               items={items}
               onSearch={handleOnSearch}

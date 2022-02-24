@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import {
   FavoriteBorder,
   MenuOutlined,
-  Search,
   ShoppingCart,
 } from "@mui/icons-material";
 import styles from "./Topbar.module.css";
@@ -15,7 +14,6 @@ import { toggleMenu } from "../../../../redux/actions/action";
 import AutoSearch from "./AutoSearch";
 
 const Topbar = () => {
-  const [searchedInput, setSearchedInput] = useState("");
   const [cartDropdown, setCartDropdown] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -52,7 +50,21 @@ const Topbar = () => {
           <div className={styles.cart_icon}>
             <ShoppingCart fontSize="large"></ShoppingCart>
 
-            {cartDropdown && <CartDropdown></CartDropdown>}
+            {cartDropdown && (
+              <div>
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderLeft: "20px solid transparent",
+                    borderRight: "20px solid transparent",
+                    borderBottom: "20px solid #0F172A",
+                  }}
+                ></div>
+
+                <CartDropdown></CartDropdown>
+              </div>
+            )}
           </div>
         </div>
         <div className={styles.account}>

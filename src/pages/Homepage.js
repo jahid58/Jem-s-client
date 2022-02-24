@@ -8,7 +8,6 @@ import MegaNavbar from "./../components/Home/navbar/megaNavbar/MegaNavbar";
 import Products from "./../components/Home/product/products/Products";
 import { useSelector } from "react-redux";
 import Popup from "../components/globalComponents/Popup";
-import AutoSearch from "./../components/Home/navbar/topbar/AutoSearch";
 
 const Homepage = () => {
   const store = useSelector((state) => state.store);
@@ -18,7 +17,6 @@ const Homepage = () => {
   return (
     <div className="bg-gray-100 ">
       <MegaNavbar />
-
       <Sliders />
       <Products />
       <ProductByChoice />
